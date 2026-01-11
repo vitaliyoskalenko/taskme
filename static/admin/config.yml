@@ -3,6 +3,7 @@ backend:
   repo: vitaliyoskalenko/taskme          # ← must be exact: username/repo-name
   branch: main                                    # your default branch
   base_url: https://docs-taskme-auth.netlify.app   
+  auth_endpoint: auth
 
 media_folder: "static/img"
 public_folder: "/img"
