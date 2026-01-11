@@ -1,0 +1,17 @@
+backend:
+  name: github
+  repo: vitaliyoskalenko/taskme
+  branch: main                               
+
+media_folder: "static/img"
+public_folder: "/img"
+
+collections:
+  - name: "docs"
+    label: "Documentation"
+    folder: "docs"
+    create: true                          
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
