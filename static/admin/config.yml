@@ -1,7 +1,10 @@
 backend:
   name: github
   repo: vitaliyoskalenko/taskme
-  branch: main                               
+  branch: main
+  base_url: https://docs-taskme.netlify.app
+  auth_endpoint: oauth/authorize 
+  token_endpoint: oauth/access_token
 
 media_folder: "static/img"
 public_folder: "/img"
@@ -10,7 +13,7 @@ collections:
   - name: "docs"
     label: "Documentation"
     folder: "docs"
-    create: true                          
+    create: true
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
