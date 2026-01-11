@@ -2,8 +2,7 @@ backend:
   name: github
   repo: vitaliyoskalenko/taskme          # ← must be exact: username/repo-name
   branch: main                                    # your default branch
-  # Optional but recommended:
-  squash_merges: true                             # cleaner commit history
+  base_url: https://your-proxy-domain.com       
 
 media_folder: "static/img"
 public_folder: "/img"
