@@ -247,7 +247,7 @@ Now that your credentials are tested and working:
 
 ## Additional Resources
 
-- [Create TaskMe credential in n8n](./create-taskme-credential-n8n.md) - Setup guide
+- [Create TaskMe credential in n8n](./create-taskme-credential.md) - Setup guide
 - [TaskMe API Documentation](https://taskme.pro/api/openapi) - Full API reference
 
 ## Need Help?

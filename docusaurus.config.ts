@@ -62,7 +62,7 @@ const config: Config = {
       logo: {
         alt: 'Logo',
         src: 'img/logo.svg',
-        href: '/docs/category/n8n'
+        href: '/docs/category/n8n',
       },
       items: [
         // Language dropdown
@@ -84,8 +84,8 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Getting Started',
-              to: '/docs/intro',
+              label: 'n8n Integration',
+              to: '/docs/category/n8n',
             },
           ],
         },

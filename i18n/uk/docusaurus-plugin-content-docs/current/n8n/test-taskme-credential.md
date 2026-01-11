@@ -247,7 +247,7 @@ https://taskme.pro/api/lists
 
 ## Додаткові ресурси
 
-- [Створення облікових даних TaskMe в n8n](./create-taskme-credential-n8n.md) - Посібник з налаштування
+- [Створення облікових даних TaskMe в n8n](./create-taskme-credential) - Посібник з налаштування
 - [Документація API TaskMe](https://taskme.pro/api/openapi) - Повний довідник API
 
 ## Потрібна допомога?
