@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Test TaskMe API Credentials
+# Test OAuth2 Credential with TaskMe API
 
 Learn how to test your TaskMe OAuth credentials by making an API call to verify the connection works correctly.
 
