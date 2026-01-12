@@ -60,7 +60,7 @@ const config: Config = {
       title: 'Documentation',
       logo: {
         alt: 'Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
         href: '/docs/category/n8n',
       },
       items: [
