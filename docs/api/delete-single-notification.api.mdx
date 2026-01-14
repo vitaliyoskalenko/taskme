@@ -1,0 +1,71 @@
+---
+id: delete-single-notification
+title: "Delete single notification"
+description: "Delete single notification"
+sidebar_label: "Delete single notification"
+hide_title: true
+hide_table_of_contents: true
+api: eJx9VMtu2zAQ/BViTy2g2k6Q9qBbgLiAi7YIEhc9BD7Q0tomTJEMSQUJBP57d0XFlu2gJz60j9mZoTqIchugfILZV/HbRrVRlYzKmgCrAgJWrVfxjb53sEbp0d+2cUfHVaLPTnrZYEQf+gBDByjBjKosaihAGbp1kvIK8PjcKo81lNG3SB2qHTYSyg7im+PsEL0yW0hc//WLs0FxHSi/zTg5OEKGgeOvZ9e81Bgqr1wOgvEEokZN4GpIBdzMri6DF+ZFalUL60WjQqC2QtJ0aOJ7hWj3aHL+zWX+Awbb+goFTSw2tjXUimJPg+56EIKr6z7ygI/YwNeIJvRsM4F7JKbHUxdACFvk6ZkP4npniTrIk0GRWS1hOq4bpt2pBAlYSf/yrlPrNeXsYnShnE6jDPsGJ87bqXQKzvHfe1u3Vc9GrgFpZIxHli/rMbbHQU1uAoPKfM5BdJM3361vZKT7H3+XF53pLgsg7DpKZbAWG2+bc43Q1M4qE3vuldnYvr2KmvstaTjxSxq5pf4mitv7xUWfh/njkj+QhGQEjmUnMC1CqxBD0e9pIVYxL0euCyFNLbbarqUmgqSvdkIZIUVltZZr6ynsBXO15ohDOqeHEhNWmaTJYK4ms8mMHUceiJTAwwzv6r9OOhnpQH8kg02dJvK4ZK97N3jm6eSdBipRnj1cknlHIDi069Yy4B+vU+Lr5xY9/xNW7E+v5Jq5JmPVKvCeHLqROuAFqsoa8jvr/elh+A98FtT5Q7TDpTRvx2cAtM2P5AxrWqXR87ib/5wv5xQrT9145r4e84dtaN4+Ysn2S+nQdfgfrFJK/wBHlc/X
+sidebar_class_name: "delete api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete single notification"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/notifications/{notificationId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete single notification
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"notificationId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"202":{"description":"Notification deleted"},"401":{"description":"Invalid or missing authentication token"},"404":{"description":"Resource not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

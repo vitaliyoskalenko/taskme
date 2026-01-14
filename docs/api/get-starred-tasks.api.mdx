@@ -1,0 +1,63 @@
+---
+id: get-starred-tasks
+title: "Get starred tasks"
+description: "Returns all starred/favorite tasks of the authenticated user."
+sidebar_label: "Get starred tasks"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVttu4zYQ/RWCTy2gxHbap7x5197E7eYCXxosAqOgpJHNjURqSSqNYfjfO0NKiSxrFwHyYlPkcM7hzOEM99yJjeWXj3w4Ykthnyw7Y/9I+M/ydcRTsImRpZNa8Us+B1cZZZnIc2adMAbSQSaetZEOmPN7dcbcFpio8Fc5mQgHKassmHMecQtJhbY7RNvzGIQBM0ZD/FwfEOzlrNRWBqyLYcQN2FIrC8huzy+GQ/o7JvRVWuchCRsBEq0cwpKhKMuc4NFw8N2S9Z7bZAuFoJHblYD78Qhih/uQf2Fb8zr+Donj3fOPPRCTiokwyhEfrUqjSzBOBqYybXmyzki1QRtV5bmIc5xzpoKIw4soSvrk5Onf0cUfIk74IeLkc9bjApdKjJjqXez6Jz8ihrzP8g35U7VjG6MTMEQd90j7WdMaJq21M9Y6B6F8ODJR5RjfTOQW/IZF0MH7zFNwQub2XfxLI3UQS88RVFWQZG/vbqf4+fXuAX9vppPZ6gYH17Or6yDeGr6xc9L5c983rolSBRMUaR9Kpk0haHuKBmdOFtDH00AhVQrmo15KEG7yFp+uXrrK7GgOdW+eRX++62BNxt/w62E6/ZuCdXe7vMb/b9PxnGLVhGbuecwad8gsM/CjApW0E0FwGzDtFI8olmJn77IHgKd33LETfkgpUFyupouG7OS2GS+vV/N6+GU+C4PFeLma18OV370+9AQXVPqx7OgECxfevQRsbxQ6Gw7deDZ5xQVbxaFa/TRCPJEmqXJhfqNy/LsXKZL7bEAc38tfHcIXAOtudCoz+f5dXok/Kulv9GNTi5pickykg9ASEfFGXwdy9+dwdFq3ZwrFJVOmDSuktcin3THQhjn9BMrzgRcs6RbnrG8bT4BCbLeKiKOvCqhlUBMpwG01kucb8NdEUH/hAx/zQd20fCsyz2CCy8rgveFb50p7OfCWBZzj/RqIUp70gHuj0yrxHIMPTqhNZ1tQhwkiafe31+ATCKF7M6qV3ghnwuBLk5K/HpYnyDgXwsI0SkgqbKyZ0UU3cij2UqM0ffCkyrSHb2WG3QglNoivHBvfz05w5tPFkhZYRukhW8rPa7+zUWi3EVPaQfhDBQR0/BQqZZtcxwLfCHioZBv6ZaLpimiDZs/hsRB8Bx6tbk0PBUpNIDM6H54Pfe/T1uEGXxqFj90VuOYV8voAODrJ/u098OGnS50/h2oclDlGnzh54exrjT3yhkSjMtTFFlnT0n4fCwsrkx8ONI0F1dAraE3iNTKUjkeqXVsQ2EtaSh8nCZTuTeWnD5sj1V9NSTjiWHUdlXnvTe1Ru5ZvpOktliQzpBrVJOrbuMYb/T+16ncz
+sidebar_class_name: "get api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get starred tasks"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/tasks/starred"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns all starred/favorite tasks of the authenticated user.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of tasks","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","description":"A task in a task list","properties":{"id":{"type":"string","nullable":true,"example":"task_123abc"},"listId":{"type":"string"},"parentId":{"type":"string","nullable":true},"label":{"type":"string","example":"Buy groceries"},"isCompleted":{"type":"boolean","default":false},"isStarred":{"type":"boolean","default":false},"details":{"type":"string","nullable":true},"priority":{"type":"string","enum":["NONE","LOW","MEDIUM","HIGH"],"default":"NONE","title":"Priority"},"dueDate":{"type":"string","format":"date-time","nullable":true},"reminderDate":{"type":"string","format":"date-time","nullable":true},"repeatDetails":{"nullable":true,"type":"object","properties":{"interval":{"type":"string","enum":["DAY","WEEK","MONTH","YEAR"],"title":"RepeatInterval"},"frequency":{"type":"integer","default":1},"daysOfWeek":{"type":"array","items":{"type":"string","enum":["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY"]},"nullable":true},"endDate":{"type":"string","format":"date-time","nullable":true},"occurrences":{"type":"integer","nullable":true}},"title":"RepeatDetails"},"subtasks":{"type":"array","items":"circular(Task)"},"dateCreated":{"type":"string","format":"date-time"},"lastModified":{"type":"string","format":"date-time"}},"required":["listId","label","dateCreated","lastModified"],"title":"Task"}}}}},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

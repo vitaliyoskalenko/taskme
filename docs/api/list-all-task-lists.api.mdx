@@ -1,0 +1,63 @@
+---
+id: list-all-task-lists
+title: "List all task lists"
+description: "List all task lists"
+sidebar_label: "List all task lists"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVdtu2zAM/RVBz26Sbnvqm9dkRYZegsTDMBTBoNh0olaWXInuGgT+95F20jiXYX2xbkeHNA9JbSSqZZBXj3LwWdzqgEHOIxkgrbzGNe1v5AKUBx9XuKLlvKbjt4vSBY3aWXl1OYikh1A6G4B4NvLTYMBDBiH1umxBkpmFywWq8CxMYyaSqbMIFhmtytLoVDG6/xT4ykaGdAWF4hmuSyAS5b1a0z2NUITOvls8QYp0UHpXgkfdOqKzDiag13Yp60i6Pxb8+PwZajRw9iR1xvnTk0jayhi14FvoKyCkTlv3/ws8iNBHiMMQclUZ7KAXzhlQVjLb9ixXJrTw2YqEyz6GDs5j0qBOPQFbFZwhD9Ph+D6+pZ3b+OuIx8l0/DAdJ79oOoyT0e/r6YiGIS1/TK4f7sb3NzSdJfF0SpvzjtkO1zbmcrbzYOvNUHtS9R/B2bkUz65H98PWznD0vjgw1cV0je0NsBgK4doDfc9kRiRz5wvFZIy7QF3AOYWMCnjnMp3rD7PUNZfPS6UbpR45afcpuvP3iHm+/4+E6olri3hqpvoyuDwtvrF9VUZnwnlR6BDIF6Gomqn0tiUn0D2DbXw5U7bKmMO6hTcq20CI0PSHZ6A+0e0JkSR7FXBv4G5RAK4c/ZxcQlOkihuJ7O/YAvhX8C1V5Q0drRDLcNXvs9ECelTVfVVqeezcxLusagQULYesO61rxt2jbQTdBvYuChth6w2Ma6MB0U47+baT6vvP5MQy7bUhE26BSlvIRO5dcRxVsFnptMUmsNrmrjHfUU7cKauWZN+iiCfjEzvT0SzhA5GzdIxl7fZaRM2cBusQ2oEypLVOS2UzsTRuoQwFSPl0JbQVSlAro7R1nmCv0LIVez86nbjHSpI0rTOXvUFvwKVCOiNd4J+xqond+TQ539+QsqdfGooaczWCb7Y58SjN7gFakQ3e2GwWKsAPb+qat18q8PwozTnFvG6Lj94kugAqI/n2+RinKZS4z8XTJ+YgN29GLLM6zJGjnGjYd2+RXXe4yc0GkXBSkKvR1oltXc2pNv8CKpaDJg==
+sidebar_class_name: "get api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List all task lists"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/lists"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List all task lists
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of task lists","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"ownerId":{"type":"string"},"title":{"type":"string"},"color":{"type":"string","nullable":true},"icon":{"type":"string","nullable":true},"description":{"type":"string","nullable":true},"isDefault":{"type":"boolean","default":false},"isShared":{"type":"boolean","default":false},"sortType":{"type":"string","enum":["ORDINAL","LABEL","PRIORITY","DATE_CREATED","UPCOMING","STARRED"],"default":"ORDINAL","title":"SortType"},"sortDirection":{"type":"string","enum":["ASCENDING","DESCENDING"],"default":"ASCENDING","title":"SortDirection"},"dateCreated":{"type":"string","format":"date-time","nullable":true},"lastModified":{"type":"string","format":"date-time"}},"required":["id","ownerId","title","lastModified"],"title":"TaskList"}}}}},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

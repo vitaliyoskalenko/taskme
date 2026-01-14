@@ -1,0 +1,71 @@
+---
+id: create-a-new-note
+title: "Create a new note"
+description: "Create a new note"
+sidebar_label: "Create a new note"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVt9P2zAQ/lcsP6dtWoHY8sYQk5jEhqDTpKE+OMm1NSS2ZztAVeV/352dtmnpENL2uJcmvjvfr++7S9fci4Xj2T1PT9hX7cHxWcIdFI2VfoXyNc9BWLDnjV/icdai2sKvBpz/pEu0WIejtFDyzNsGEl5o5UF5UgljKlkIL7UaPTitSOaKJdSC3vzKAM+4zh+g8DzhxmoD1ktMArV4DRbarq7Knq3zVqoF2qqmqkReQQzaJtxLT6dDy3YvnyO6Stt3+S8xnQsL+Hs0n7m2tcAYwW7gZQ3kvhLOX+tSzuX7b7VJr6P3XV27KvYzOQgx2/aBE5i3ESj0SV5fBkY7SVjwbJJSFGe0crHbkzSlRwmusNJEI95FYQp98X8GrDzSCoLiP96EtyRQ/wb0Du2TY4BeqSdRyZJ1E8yMWFValExbfLWiBg/W8XB7/OfbaF1L57AkJnAtYIIdFZjXj6BCSceIxART8LxhE7xgaQ71LqyZR8Bl0udowjFaA8RVWjqY21JjhzgaBE4JWkh8pMLSop1lnyh58tXYClVL743LRiMv3GMNQyThSBjJD3O7sbpsipB+9MHb3gq8I1JH3vYX4RZaCkLRgxmeoxFK4svnDeBffkxfRUZZ7BjTuRdS4aTNra4PmwqqNFoqH/pKw3a727+XL6I2cQ7687Nj3IYZW8F2OvqiMBQ7wR73cTVMTgbp2WDycTo+zU7H2eTDMD0b/zzk4RuWmLhUcx361iU0RVTYtVBigY1Tnp3fXL1q0O3l3ZQUbE6UI1viHOHJKum8S8I7PgIJwgNTiW3Do1AlW1Q6FxUiK2yxZFIhB7FcHHVt0ewJord6l0dvsw2Jg8ipmMx4mA5TqoQIiBeoGCUC6MfovVfJli4eWT8yFYJNngJP1x2V77nafH+XRHEUrNe5cPDdVm1LYkTd0jd5RqNhZVxX+EnGCyBKZN1uji4iyoMphd1O0uu13SabG+dFAca/adufwptvd0TovPsPUOuS7ljxjEL6zTi+6FB+GJ4gWyNh1KLBVqM++iROi/2ROhihUFWnEmrVyxDbEyymNEPYoqQrpdtCM3T+GwKNCMM=
+sidebar_class_name: "post api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a new note"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/notes"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create a new note
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"categoryId":{"type":"string","nullable":true},"title":{"type":"string"},"content":{"type":"string"},"color":{"type":"string","nullable":true},"dateCreated":{"type":"string","format":"date-time"},"lastModified":{"type":"string","format":"date-time"}},"required":["title","content","dateCreated","lastModified"],"title":"NoteRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Created note","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"categoryId":{"type":"string","nullable":true},"title":{"type":"string"},"content":{"type":"string"},"color":{"type":"string","nullable":true},"dateCreated":{"type":"string","format":"date-time"},"lastModified":{"type":"string","format":"date-time"}},"required":["id","title","content","dateCreated","lastModified"],"title":"Note"}}}},"400":{"description":"Invalid request payload or parameters"},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

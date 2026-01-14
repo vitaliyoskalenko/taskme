@@ -1,0 +1,63 @@
+---
+id: get-todays-tasks
+title: "Get today's tasks"
+description: "Returns tasks scheduled or due today for the authenticated user."
+sidebar_label: "Get today's tasks"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVttu4zYQ/RWBL20BJ7Z3+5Q3d+1N3G4u8KXBIjAKihrZ3Eiklpc0huF/7wxpxbKsFgG2LzYvw5mjmcM53DHH15ZdPbHBMFlw+2yTi+RPCX9btuqxDKwwsnJSK3bFZuC8UTZxwcyKDWS+gCzRJsk8JE5nfJvkOHMbSLjHX+Wk4A5NvAVzyXrMgvBGui0G3LEUuAEzQkOcrvYY7/Wi0lbGcB8HPWbAVlpZQIA79mEwoL9TTF+kdYnOIyYMILRyGJYMeVUVFB4N+98sWe8YgS45jdy2AjzPjeFbPCcdlLaxrtNvIBxrp2AUAiVSJTyOCoyPVpXRFRgnI1KZNTxZZ6Rao43yRcHTAtec8dBj8MrLiqaMPP01/PCRp4Lte4x8Tjtc4FaFGVOdm23/5IenUHRZHiP/5rfJ2mgBhqDjGWk/adrDojVOploXwFVIR859gfnNeWEhHJg7TOJ7zTNwXBb2XfgrI3UkS8cnKF8Sa+/u7yY4/XL/iL+3k/F0eYuDm+n1TeTvIXxt56QL3/1QuyZIHsZI0q4oSOaS0/EMDS6cLKELp4FSqgzMj3qpgLvxMT9tvrSZ2eIc8t688O56H5I1Hn3F2eNk8gcl6/5ucYP/XyejGeWqTs0s4JjW7hBZbuC7ByWahaBwazDNEg8pl3xr7/NHgOd33LEzfAgpQlwsJ/Ma7PiuHi9ulrPD8PNsGgfz0WI5OwyX4fRq35FcUNmPVUcLbFx49wTYziy0Duzb+azrihvWp7Fb/WuGmJBG+IKbn6kj/xJIiuA+GeCn9/K/PiI0AOtudSZz+f5TgYnfvQw3+qnuRXUzOQXSitAgEeFGX3ty9+tgeN63pwrJJYN2lNJaxNNUDLRBOXkGFfDAK7Z0i2s2yMYzIBGbUtFj6MsDSQaJSAluoxE8W0O4Jpz0hfVDzvsZVmEbhMi8gIkOvcFbwzbOVfaqH+xKuMTb1eeVPFOAB6MzLwLC6INRzFrX5qQvkSJNdXtLPQWh6MGMOmUwwpU4+FwX5PfHxVlkXItJSTQSSCqU1dzosp03pHqlkZghdVLlOoRv1CW55YqvMb5yyehhehZnNpkvaCNIeUm2VJ03tbO9KLa9RGkH8Q/rH6PjlKssWRc65QUmiBuxiWopNF0QbdDsBaK38oijodX0TKDSRDDDy8HlICiftg4PhMbIQ+6uwcU3x0/2Tf5PvmR3fA38H2+XQwkd0rFfFVgAghW4szuQ7Im94Qg0Q2JsEDZt7HYpt7A0xX5Py9hPDT2CVsRdI2PneKLWtQGOUtIg+kgIqNyR5OfvmhPSX0+IOfyUdi2aBe9161Hbhm+EGSwWxDOE2juAOFzGFV7ofwA86XcD
+sidebar_class_name: "get api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get today's tasks"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/tasks/daily"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns tasks scheduled or due today for the authenticated user.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of tasks","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","description":"A task in a task list","properties":{"id":{"type":"string","nullable":true,"example":"task_123abc"},"listId":{"type":"string"},"parentId":{"type":"string","nullable":true},"label":{"type":"string","example":"Buy groceries"},"isCompleted":{"type":"boolean","default":false},"isStarred":{"type":"boolean","default":false},"details":{"type":"string","nullable":true},"priority":{"type":"string","enum":["NONE","LOW","MEDIUM","HIGH"],"default":"NONE","title":"Priority"},"dueDate":{"type":"string","format":"date-time","nullable":true},"reminderDate":{"type":"string","format":"date-time","nullable":true},"repeatDetails":{"nullable":true,"type":"object","properties":{"interval":{"type":"string","enum":["DAY","WEEK","MONTH","YEAR"],"title":"RepeatInterval"},"frequency":{"type":"integer","default":1},"daysOfWeek":{"type":"array","items":{"type":"string","enum":["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY"]},"nullable":true},"endDate":{"type":"string","format":"date-time","nullable":true},"occurrences":{"type":"integer","nullable":true}},"title":"RepeatDetails"},"subtasks":{"type":"array","items":"circular(Task)"},"dateCreated":{"type":"string","format":"date-time"},"lastModified":{"type":"string","format":"date-time"}},"required":["listId","label","dateCreated","lastModified"],"title":"Task"}}}}},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

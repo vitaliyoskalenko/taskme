@@ -1,0 +1,1485 @@
+openapi: 3.0.3
+info:
+  title: Task Management API
+  description: REST API for managing task lists, tasks, notes, notifications, and global search in a collaborative task management application.
+  version: 1.0.0
+
+servers:
+  - url: https://taskme.pro/api
+    description: Production server
+
+paths:
+  # 01 Tasks - Views
+  /tasks/assigned:
+    get:
+      tags: ["01 Tasks - Views"]
+      summary: Get assigned tasks
+      description: Returns all tasks assigned to the authenticated user across all lists.
+      security:
+        - bearerAuth: []
+      x-position: 10
+      responses:
+        '200':
+          description: List of tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /tasks/starred:
+    get:
+      tags: ["01 Tasks - Views"]
+      summary: Get starred tasks
+      description: Returns all starred/favorite tasks of the authenticated user.
+      security:
+        - bearerAuth: []
+      x-position: 20
+      responses:
+        '200':
+          description: List of tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /tasks/daily:
+    get:
+      tags: ["01 Tasks - Views"]
+      summary: Get today's tasks
+      description: Returns tasks scheduled or due today for the authenticated user.
+      security:
+        - bearerAuth: []
+      x-position: 30
+      responses:
+        '200':
+          description: List of tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /tasks/upcoming:
+    get:
+      tags: ["01 Tasks - Views"]
+      summary: Get upcoming tasks
+      description: Returns tasks with future due dates for the authenticated user.
+      security:
+        - bearerAuth: []
+      x-position: 40
+      responses:
+        '200':
+          description: List of tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /tasks/overdue:
+    get:
+      tags: ["01 Tasks - Views"]
+      summary: Get overdue tasks
+      description: Returns tasks past their due date for the authenticated user.
+      security:
+        - bearerAuth: []
+      x-position: 50
+      responses:
+        '200':
+          description: List of tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  # 02 Tasks (core operations)
+  /lists/{listId}/tasks:
+    get:
+      tags: ["02 Tasks"]
+      summary: List tasks in a list
+      description: Returns all tasks belonging to the specified list, sorted according to the list settings.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: listId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the task list
+      x-position: 10
+      responses:
+        '200':
+          description: List of tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    post:
+      tags: ["02 Tasks"]
+      summary: Create a new task
+      description: Creates a new task in the specified list.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: listId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      x-position: 20
+      responses:
+        '200':
+          description: Created task
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /lists/{listId}/tasks/clear:
+    post:
+      tags: ["02 Tasks"]
+      summary: Clear completed tasks
+      description: Permanently deletes all completed tasks in the specified list.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: listId
+          in: path
+          required: true
+          schema:
+            type: string
+      x-position: 90
+      responses:
+        '200':
+          description: Task list cleared
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /lists/{listId}/tasks/{taskId}:
+    get:
+      tags: ["02 Tasks"]
+      summary: Get task by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: listId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: string
+      x-position: 30
+      responses:
+        '200':
+          description: The task
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    put:
+      tags: ["02 Tasks"]
+      summary: Update task
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: listId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      x-position: 40
+      responses:
+        '200':
+          description: Task updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    delete:
+      tags: ["02 Tasks"]
+      summary: Delete task
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: listId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: string
+      x-position: 50
+      responses:
+        '202':
+          description: Task deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /lists/{listId}/tasks/{taskId}/move:
+    post:
+      tags: ["02 Tasks"]
+      summary: Move task to another list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: listId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MoveTaskRequest'
+      x-position: 60
+      responses:
+        '200':
+          description: Task moved
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /lists/{listId}/tasks/{taskId}/reorder:
+    post:
+      tags: ["02 Tasks"]
+      summary: Reorder task within list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: listId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReorderRequest'
+      x-position: 70
+      responses:
+        '200':
+          description: Task reordered
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /lists/{listId}/tasks/{taskId}/tag:
+    post:
+      tags: ["02 Tasks"]
+      summary: Add tag to task
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: listId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskTagRequest'
+      x-position: 80
+      responses:
+        '201':
+          description: Tag added
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  # 03 Lists
+  /lists:
+    get:
+      tags: ["03 Lists"]
+      summary: List all task lists
+      security:
+        - bearerAuth: []
+      x-position: 10
+      responses:
+        '200':
+          description: List of task lists
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+    post:
+      tags: ["03 Lists"]
+      summary: Create a new task list
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskListRequest'
+      x-position: 20
+      responses:
+        '200':
+          description: Created task list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /lists/{id}:
+    get:
+      tags: ["03 Lists"]
+      summary: Get list by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      x-position: 30
+      responses:
+        '200':
+          description: The task list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    put:
+      tags: ["03 Lists"]
+      summary: Update list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskList'
+      x-position: 40
+      responses:
+        '200':
+          description: Task list updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+    delete:
+      tags: ["03 Lists"]
+      summary: Delete list
+      description: Deletes a non-default task list.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      x-position: 50
+      responses:
+        '202':
+          description: Task list deleted
+        '400':
+          description: Cannot delete default list
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /lists/{id}/leave:
+    post:
+      tags: ["03 Lists"]
+      summary: Leave shared list
+      description: Removes the authenticated user from a shared list.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      x-position: 60
+      responses:
+        '200':
+          description: Member left list
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /lists/{id}/reorder:
+    post:
+      tags: ["03 Lists"]
+      summary: Reorder task lists
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReorderRequest'
+      x-position: 70
+      responses:
+        '200':
+          description: Task lists reordered
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  # 04 Notes
+  /notes:
+    get:
+      tags: ["04 Notes"]
+      summary: List all notes
+      security:
+        - bearerAuth: []
+      x-position: 10
+      responses:
+        '200':
+          description: List of notes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Note'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+    post:
+      tags: ["04 Notes"]
+      summary: Create a new note
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NoteRequest'
+      x-position: 20
+      responses:
+        '200':
+          description: Created note
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Note'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /notes/{noteId}:
+    get:
+      tags: ["04 Notes"]
+      summary: Get note by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: noteId
+          in: path
+          required: true
+          schema:
+            type: string
+      x-position: 30
+      responses:
+        '200':
+          description: The note
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Note'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    put:
+      tags: ["04 Notes"]
+      summary: Update note
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: noteId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NoteRequest'
+      x-position: 40
+      responses:
+        '200':
+          description: Note updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+    delete:
+      tags: ["04 Notes"]
+      summary: Delete note
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: noteId
+          in: path
+          required: true
+          schema:
+            type: string
+      x-position: 50
+      responses:
+        '202':
+          description: Note deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  # 05 Notifications
+  /notifications:
+    get:
+      tags: ["05 Notifications"]
+      summary: List user notifications
+      description: Returns a paginated list of notifications for the authenticated user.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+          description: Page number (1-based)
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+          description: Number of notifications per page (large values return all)
+      x-position: 10
+      responses:
+        '200':
+          description: List of notifications
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Notification'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /notifications/markAllAsRead:
+    put:
+      tags: ["05 Notifications"]
+      summary: Mark all notifications as read
+      description: Marks every notification of the authenticated user as read.
+      security:
+        - bearerAuth: []
+      x-position: 20
+      responses:
+        '202':
+          description: All notifications marked as read
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /notifications/mute:
+    post:
+      tags: ["05 Notifications"]
+      summary: Mute/unmute notifications for an entity
+      description: Mutes or unmutes push/email notifications for a specific entity (e.g., task list or task) for the current user.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MuteNotificationsRequest'
+      x-position: 30
+      responses:
+        '200':
+          description: Notifications muted/unmuted successfully
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /notifications/clearAll:
+    delete:
+      tags: ["05 Notifications"]
+      summary: Clear all notifications
+      description: Permanently deletes all notifications for the authenticated user.
+      security:
+        - bearerAuth: []
+      x-position: 40
+      responses:
+        '202':
+          description: All notifications deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /notifications/{notificationId}:
+    get:
+      tags: ["05 Notifications"]
+      summary: Get notification by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: notificationId
+          in: path
+          required: true
+          schema:
+            type: string
+      x-position: 50
+      responses:
+        '200':
+          description: The requested notification
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Notification'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    delete:
+      tags: ["05 Notifications"]
+      summary: Delete single notification
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: notificationId
+          in: path
+          required: true
+          schema:
+            type: string
+      x-position: 60
+      responses:
+        '202':
+          description: Notification deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /notifications/{notificationId}/markAsRead:
+    put:
+      tags: ["05 Notifications"]
+      summary: Mark single notification as read
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: notificationId
+          in: path
+          required: true
+          schema:
+            type: string
+      x-position: 70
+      responses:
+        '202':
+          description: Notification marked as read
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # 06 Search
+  /search:
+    get:
+      tags: ["06 Search"]
+      summary: Global search
+      description: Performs a full-text search across tasks, comments, and notes belonging to the authenticated user.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Search query string
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+          description: Page number (1-based)
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            default: 10
+          description: Number of results per page
+      x-position: 10
+      responses:
+        '200':
+          description: Paginated search results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SearchResult'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT token obtained from authentication endpoint
+
+  responses:
+    Unauthorized:
+      description: Invalid or missing authentication token
+    BadRequest:
+      description: Invalid request payload or parameters
+    NotFound:
+      description: Resource not found
+
+  schemas:
+    # ────────────────────────────────────────────────────────────────
+    # All schemas remain completely unchanged from your original version
+    # ────────────────────────────────────────────────────────────────
+    Task:
+      type: object
+      description: A task in a task list
+      properties:
+        id:
+          type: string
+          nullable: true
+          example: task_123abc
+        listId:
+          type: string
+        parentId:
+          type: string
+          nullable: true
+        label:
+          type: string
+          example: Buy groceries
+        isCompleted:
+          type: boolean
+          default: false
+        isStarred:
+          type: boolean
+          default: false
+        details:
+          type: string
+          nullable: true
+        priority:
+          $ref: '#/components/schemas/Priority'
+        dueDate:
+          type: string
+          format: date-time
+          nullable: true
+        reminderDate:
+          type: string
+          format: date-time
+          nullable: true
+        repeatDetails:
+          $ref: '#/components/schemas/RepeatDetails'
+          nullable: true
+        subtasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Task'
+        dateCreated:
+          type: string
+          format: date-time
+        lastModified:
+          type: string
+          format: date-time
+      required:
+        - listId
+        - label
+        - dateCreated
+        - lastModified
+
+    Priority:
+      type: string
+      enum: [NONE, LOW, MEDIUM, HIGH]
+      default: NONE
+
+    RepeatDetails:
+      type: object
+      properties:
+        interval:
+          $ref: '#/components/schemas/RepeatInterval'
+        frequency:
+          type: integer
+          default: 1
+        daysOfWeek:
+          type: array
+          items:
+            type: string
+            enum: [MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY]
+          nullable: true
+        endDate:
+          type: string
+          format: date-time
+          nullable: true
+        occurrences:
+          type: integer
+          nullable: true
+
+    RepeatInterval:
+      type: string
+      enum: [DAY, WEEK, MONTH, YEAR]
+
+    MoveTaskRequest:
+      type: object
+      properties:
+        newListId:
+          type: string
+        lastModified:
+          type: string
+          format: date-time
+      required:
+        - newListId
+        - lastModified
+
+    ReorderRequest:
+      type: object
+      properties:
+        fromIndex:
+          type: integer
+        toIndex:
+          type: integer
+        lastModified:
+          type: string
+          format: date-time
+      required:
+        - fromIndex
+        - toIndex
+        - lastModified
+
+    TaskTagRequest:
+      type: object
+      properties:
+        tagId:
+          type: string
+      required:
+        - tagId
+
+    Note:
+      type: object
+      properties:
+        id:
+          type: string
+        categoryId:
+          type: string
+          nullable: true
+        title:
+          type: string
+        content:
+          type: string
+        color:
+          type: string
+          nullable: true
+        dateCreated:
+          type: string
+          format: date-time
+        lastModified:
+          type: string
+          format: date-time
+      required:
+        - id
+        - title
+        - content
+        - dateCreated
+        - lastModified
+
+    NoteRequest:
+      type: object
+      properties:
+        categoryId:
+          type: string
+          nullable: true
+        title:
+          type: string
+        content:
+          type: string
+        color:
+          type: string
+          nullable: true
+        dateCreated:
+          type: string
+          format: date-time
+        lastModified:
+          type: string
+          format: date-time
+      required:
+        - title
+        - content
+        - dateCreated
+        - lastModified
+
+    TaskList:
+      type: object
+      properties:
+        id:
+          type: string
+        ownerId:
+          type: string
+        title:
+          type: string
+        color:
+          type: string
+          nullable: true
+        icon:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        isDefault:
+          type: boolean
+          default: false
+        isShared:
+          type: boolean
+          default: false
+        sortType:
+          $ref: '#/components/schemas/SortType'
+        sortDirection:
+          $ref: '#/components/schemas/SortDirection'
+        dateCreated:
+          type: string
+          format: date-time
+          nullable: true
+        lastModified:
+          type: string
+          format: date-time
+      required:
+        - id
+        - ownerId
+        - title
+        - lastModified
+
+    TaskListRequest:
+      type: object
+      properties:
+        templateId:
+          type: string
+        categoryId:
+          type: string
+          nullable: true
+        title:
+          type: string
+        color:
+          type: string
+          nullable: true
+        icon:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        sortType:
+          $ref: '#/components/schemas/SortType'
+        sortDirection:
+          $ref: '#/components/schemas/SortDirection'
+        dateCreated:
+          type: string
+          format: date-time
+        lastModified:
+          type: string
+          format: date-time
+      required:
+        - templateId
+        - title
+        - dateCreated
+        - lastModified
+
+    SortType:
+      type: string
+      enum: [ORDINAL, LABEL, PRIORITY, DATE_CREATED, UPCOMING, STARRED]
+      default: ORDINAL
+
+    SortDirection:
+      type: string
+      enum: [ASCENDING, DESCENDING]
+      default: ASCENDING
+
+    Notification:
+      type: object
+      description: Base polymorphic notification (discriminated by type field derived from @SerialName)
+      discriminator:
+        propertyName: type
+        mapping:
+          info: '#/components/schemas/InfoNotification'
+          comment: '#/components/schemas/CommentNotification'
+          task_list_invitation: '#/components/schemas/TaskListInvitationNotification'
+          task_list_invitation_accepted: '#/components/schemas/TaskListInvitationAcceptedNotification'
+          task_list_invitation_declined: '#/components/schemas/TaskListInvitationDeclinedNotification'
+          task_assignment: '#/components/schemas/TaskAssignmentNotification'
+          task_reminder: '#/components/schemas/TaskReminderNotification'
+          member_deleted_from_task_list: '#/components/schemas/MemberDeletedFromTaskListNotification'
+          task_completion_approved: '#/components/schemas/TaskCompletionApprovedNotification'
+          task_completion_discarded: '#/components/schemas/TaskCompletionDiscardedNotification'
+          entity_crud: '#/components/schemas/EntityCRUDNotification'
+      properties:
+        type:
+          type: string
+          description: Notification type discriminator
+        id:
+          type: string
+        userId:
+          type: string
+        title:
+          type: string
+        message:
+          type: string
+        dateCreated:
+          type: string
+          format: date-time
+        lastModified:
+          type: string
+          format: date-time
+        isRead:
+          type: boolean
+      required:
+        - type
+        - id
+        - userId
+        - title
+        - message
+        - dateCreated
+        - lastModified
+        - isRead
+
+    InfoNotification:
+      allOf:
+        - $ref: '#/components/schemas/Notification'
+      description: Simple informational notification
+
+    CommentNotification:
+      allOf:
+        - $ref: '#/components/schemas/Notification'
+      properties:
+        taskId:
+          type: string
+        commentId:
+          type: string
+        commentAuthorName:
+          type: string
+        commentAuthorPhotoUri:
+          type: string
+          nullable: true
+        taskLabel:
+          type: string
+      required:
+        - taskId
+        - commentId
+        - commentAuthorName
+        - taskLabel
+
+    TaskListInvitationNotification:
+      allOf:
+        - $ref: '#/components/schemas/Notification'
+      properties:
+        token:
+          type: string
+        listTitle:
+          type: string
+        listOwnerName:
+          type: string
+        listOwnerPhotoUri:
+          type: string
+          nullable: true
+      required:
+        - token
+        - listTitle
+        - listOwnerName
+
+    TaskListInvitationAcceptedNotification:
+      allOf:
+        - $ref: '#/components/schemas/Notification'
+      properties:
+        listId:
+          type: string
+        listTitle:
+          type: string
+        memberName:
+          type: string
+        memberPhotoUri:
+          type: string
+          nullable: true
+      required:
+        - listId
+        - listTitle
+        - memberName
+
+    TaskListInvitationDeclinedNotification:
+      allOf:
+        - $ref: '#/components/schemas/Notification'
+      properties:
+        listId:
+          type: string
+        listTitle:
+          type: string
+        memberName:
+          type: string
+        memberPhotoUri:
+          type: string
+          nullable: true
+      required:
+        - listId
+        - listTitle
+        - memberName
+
+    TaskAssignmentNotification:
+      allOf:
+        - $ref: '#/components/schemas/Notification'
+      properties:
+        listId:
+          type: string
+        taskId:
+          type: string
+        taskLabel:
+          type: string
+        assignerName:
+          type: string
+        assignerPhotoUri:
+          type: string
+          nullable: true
+      required:
+        - listId
+        - taskId
+        - taskLabel
+        - assignerName
+
+    TaskReminderNotification:
+      allOf:
+        - $ref: '#/components/schemas/Notification'
+      properties:
+        listId:
+          type: string
+        taskId:
+          type: string
+        listTitle:
+          type: string
+        taskLabel:
+          type: string
+      required:
+        - listId
+        - taskId
+        - listTitle
+        - taskLabel
+
+    MemberDeletedFromTaskListNotification:
+      allOf:
+        - $ref: '#/components/schemas/Notification'
+      properties:
+        listId:
+          type: string
+        listTitle:
+          type: string
+        memberName:
+          type: string
+        memberPhotoUri:
+          type: string
+          nullable: true
+        selfDeletion:
+          type: boolean
+      required:
+        - listId
+        - listTitle
+        - memberName
+        - selfDeletion
+
+    TaskCompletionApprovedNotification:
+      allOf:
+        - $ref: '#/components/schemas/Notification'
+      properties:
+        listId:
+          type: string
+          nullable: true
+        taskId:
+          type: string
+        taskLabel:
+          type: string
+      required:
+        - taskId
+        - taskLabel
+
+    TaskCompletionDiscardedNotification:
+      allOf:
+        - $ref: '#/components/schemas/Notification'
+      properties:
+        listId:
+          type: string
+          nullable: true
+        taskId:
+          type: string
+        taskLabel:
+          type: string
+        discardReason:
+          type: string
+      required:
+        - taskId
+        - taskLabel
+        - discardReason
+
+    EntityCRUDNotification:
+      allOf:
+        - $ref: '#/components/schemas/Notification'
+      properties:
+        entityId:
+          type: string
+        parentId:
+          type: string
+          nullable: true
+        entityType:
+          type: string
+        entityTitle:
+          type: string
+        parentTitle:
+          type: string
+          nullable: true
+        action:
+          type: string
+        performedByUserId:
+          type: string
+          nullable: true
+        userName:
+          type: string
+        userPhotoUri:
+          type: string
+          nullable: true
+      required:
+        - entityId
+        - entityType
+        - entityTitle
+        - userName
+
+    MuteNotificationsRequest:
+      type: object
+      properties:
+        memberId:
+          type: string
+        entityId:
+          type: string
+        entityType:
+          type: string
+        mute:
+          type: boolean
+      required:
+        - memberId
+        - entityId
+        - entityType
+        - mute
+
+    SearchResult:
+      type: object
+      description: Polymorphic search result (task, comment, or note)
+      discriminator:
+        propertyName: type
+        mapping:
+          task: '#/components/schemas/SearchResultTask'
+          comment: '#/components/schemas/SearchResultComment'
+          note: '#/components/schemas/SearchResultNote'
+      properties:
+        type:
+          type: string
+          description: Result type discriminator (task, comment, or note)
+      required:
+        - type
+
+    SearchResultTask:
+      allOf:
+        - $ref: '#/components/schemas/SearchResult'
+      description: Search result for a task
+      properties:
+        id:
+          type: string
+        listId:
+          type: string
+        label:
+          type: string
+        details:
+          type: string
+          nullable: true
+        dateCreated:
+          type: string
+          format: date-time
+      required:
+        - id
+        - listId
+        - label
+        - dateCreated
+
+    SearchResultComment:
+      allOf:
+        - $ref: '#/components/schemas/SearchResult'
+      description: Search result for a comment
+      properties:
+        id:
+          type: string
+        content:
+          type: string
+        targetId:
+          type: string
+        targetType:
+          type: string
+          description: Type of entity the comment belongs to (e.g., TASK)
+        authorEmail:
+          type: string
+        authorName:
+          type: string
+        authorProfilePhotoUri:
+          type: string
+          nullable: true
+        dateCreated:
+          type: string
+          format: date-time
+      required:
+        - id
+        - content
+        - targetId
+        - targetType
+        - authorEmail
+        - authorName
+        - dateCreated
+
+    SearchResultNote:
+      allOf:
+        - $ref: '#/components/schemas/SearchResult'
+      description: Search result for a note
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        content:
+          type: string
+        dateCreated:
+          type: string
+          format: date-time
+      required:
+        - id
+        - title
+        - content
+        - dateCreated

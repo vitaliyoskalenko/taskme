@@ -1,0 +1,71 @@
+---
+id: create-a-new-task
+title: "Create a new task"
+description: "Creates a new task in the specified list."
+sidebar_label: "Create a new task"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWN1v2zYQ/1cEPrWAE3+sRTu/uYm7eFviwB8IusAYaOlss5FIjaTSGIb/992RkiXLSpChwJ7yIlHUffPudyR3zPK1Yf171ukFM24eDFu0WAQm1CK1QknWZxcauAUT8EDCj8AiUSBkYDcQmBRCsRIQBbEw9py1mIEw08JuUeKOLYFr0IPMbvBzsUfBKdc8AQvaOAKJH6iAmEcRcgtSl3KkbzEN/2RCQ8T6VmeAksMNJJz1d8xuU+IyVgu5ZnuSS8Rg7BcVbYmizhsqaUFa+sXTNBYhJ9fa3w35tzsVrZbfIbSsHojBwXnuR2Q4UqVapaCtAEMyRHRqZIvJLI75MobCJHjiSUqfjCT93e39wpch27eKYJz66aKHXjT9rMsnOXwJcRNlqflLtg3WWoWgyXTkEeZC0T8LVR1LpWLg0oVjxbMY47jisQHHMLVc69eSR2C5iM2r7E+1UD6TGlyQWUI5ezO+GeLnn+M7fF4PL0fzaxxcjX678lmcqy/orLDO79tCNJmUwSVmd5OWldIJJ/YICc6swFxtsFNDImQE+melpFhkl2V86vlSz8xazmF+60fevN55sC4H3/Drbjj8g4I1vpld4fvbcDChWBWhmTg7RoU4tGzlakuG1YUgdWvQ1SXuUiz51oxXdwAPFVpMD76l2raQNK58YR+a5E2czYfTwtjLm2I8u5pP8uHXycgPpoPZfJIP5457sW8ILsjo51ZHhYhqWHshmMYo1Bj29XgW64o/TLa0DmafjRALhQ6zmOt3hMfvXZKicR6FG2u/wQkHAMZeq8jh82u59lXcvS+B2YPJsSE1DZUkIrtRFkl7OkuVER4/ex2SblIljY9jr9OhV1O3iRzAsjfofoPuN+h+g+436P7/oftDEzqPJOaWiIJ8wx2kfBsrHgVKB5W9vePuPs+N1IkwBp0JOJ4OEBlzXA+segDpnIEnxH2Dc/6o8ACYxdV20mIoKwNqK3QCQM0bFdHxQXlgp1NEn7UpDqa98+HYt/0C0jlFPxankExj8bGNtanptx1FAudYpG2eipNGcqtVlIXOVi+Dkfbi2DOlduQzrXr4OawgKWH5WcYBriPCGT/4Wqzr73ezE80458MTKMxDIbFHrrRK6hHEikkV5rcLIrXJSXk2Ghb9w7e6o/5Vtq8yz8quVc7lzanWgWoNyHWNox6TzxzaSEXJoVsUYH8Adtwh9D6cdT6d9X6ddT/2P3b7vc/nnU/dv1gdvF+mrAF0Cbk5slaAsnuMhQdsW1Sw6CVlR3jTOUKNe8KaRQ0SXpJ1DAPPU1I3lyvl8qxSx8E1l3yNiSZtMLgdnSTUZDid0Y9gRfVItFSQh92RabkxvqTC4797oSk+zfCTyyhYx2rJY6wErsON312FigBVaSR7BC8tKe2o7OHouoBq0BvTPe+cd9xOCesXGVwj9dcDPlaV64e6J7tyl/ifLivyorQINe00xpIi/Q4Ndjl+eByl9O4fANUWtyQbQhok2e2W3MBcx/s9TWMmabr/WBBCaeGbC8JMJAyNq7XwjA/vJjmQvw+es7LoP3JbAiHDoYfJ3NY9tdQNcKySCoZeeD1nMxJRMp/srvetgmMQhpDaF2mrCHw7nhJ6LfPLmERFxKP5D6pFfDpDlfPblaOb22G2y3WGeYL/vUwCMH6MnzW8dF41hgLXxFHMCDBxXYrI5P1lgcL/BcOTV5o=
+sidebar_class_name: "post api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a new task"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/lists/{listId}/tasks"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Creates a new task in the specified list.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"listId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","description":"A task in a task list","properties":{"id":{"type":"string","nullable":true,"example":"task_123abc"},"listId":{"type":"string"},"parentId":{"type":"string","nullable":true},"label":{"type":"string","example":"Buy groceries"},"isCompleted":{"type":"boolean","default":false},"isStarred":{"type":"boolean","default":false},"details":{"type":"string","nullable":true},"priority":{"type":"string","enum":["NONE","LOW","MEDIUM","HIGH"],"default":"NONE","title":"Priority"},"dueDate":{"type":"string","format":"date-time","nullable":true},"reminderDate":{"type":"string","format":"date-time","nullable":true},"repeatDetails":{"nullable":true,"type":"object","properties":{"interval":{"type":"string","enum":["DAY","WEEK","MONTH","YEAR"],"title":"RepeatInterval"},"frequency":{"type":"integer","default":1},"daysOfWeek":{"type":"array","items":{"type":"string","enum":["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY"]},"nullable":true},"endDate":{"type":"string","format":"date-time","nullable":true},"occurrences":{"type":"integer","nullable":true}},"title":"RepeatDetails"},"subtasks":{"type":"array","items":"circular(Task)"},"dateCreated":{"type":"string","format":"date-time"},"lastModified":{"type":"string","format":"date-time"}},"required":["listId","label","dateCreated","lastModified"],"title":"Task"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Created task","content":{"application/json":{"schema":{"type":"object","description":"A task in a task list","properties":{"id":{"type":"string","nullable":true,"example":"task_123abc"},"listId":{"type":"string"},"parentId":{"type":"string","nullable":true},"label":{"type":"string","example":"Buy groceries"},"isCompleted":{"type":"boolean","default":false},"isStarred":{"type":"boolean","default":false},"details":{"type":"string","nullable":true},"priority":{"type":"string","enum":["NONE","LOW","MEDIUM","HIGH"],"default":"NONE","title":"Priority"},"dueDate":{"type":"string","format":"date-time","nullable":true},"reminderDate":{"type":"string","format":"date-time","nullable":true},"repeatDetails":{"nullable":true,"type":"object","properties":{"interval":{"type":"string","enum":["DAY","WEEK","MONTH","YEAR"],"title":"RepeatInterval"},"frequency":{"type":"integer","default":1},"daysOfWeek":{"type":"array","items":{"type":"string","enum":["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY"]},"nullable":true},"endDate":{"type":"string","format":"date-time","nullable":true},"occurrences":{"type":"integer","nullable":true}},"title":"RepeatDetails"},"subtasks":{"type":"array","items":"circular(Task)"},"dateCreated":{"type":"string","format":"date-time"},"lastModified":{"type":"string","format":"date-time"}},"required":["listId","label","dateCreated","lastModified"],"title":"Task"}}}},"400":{"description":"Invalid request payload or parameters"},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

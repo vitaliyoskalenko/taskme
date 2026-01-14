@@ -1,0 +1,71 @@
+---
+id: get-note-by-id
+title: "Get note by ID"
+description: "Get note by ID"
+sidebar_label: "Get note by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVMtu2zAQ/BWCpxZwLKfNybegTQMXSBEkLnoIfKCltcVEJhWSCmII+vfOkopf8iEXiY99DHdmt5VBrb2cPsnJlfhjA3m5GElPeeN02OK8lUtSjtx1E0psFx2ua+XUhgI5Hw0MNnIqDbxnhRxJbbCrFexH0tFrox0VchpcQ4icl7RRctrKsK3ZywenzVp2HPf9orZeB20R4PuEnX1tjQcm2H+bTPhXkM+drpORnJckOC8y5dYEMoFtVF1XOldskz17NmyHie3ymfIAx9rZmlzQKY0uzoBDdBVobd12duZ6JE1TVWpZUXolzIMOvDsXaA/zzF1l3afiF4DzwxG+Z/GsrNso5Ih2F0GDHzhVyoc7W+iV/rxXd0jhE1fn43H7pxzDOcmz2BVDsrwQkWNeTS6HZM7Mm6p0IawTG+09QAkF1SFFT6YI9oWMjP5XQ/8H8rZxeVSEWNnGFBH/sdEthagYsdyK2U+gpXc8wuMyifmFoPpDJY4kUDXEimSNQvelRS3kmqJ4WOZTmXFIn7WpBzrJLeTePhqkcRVsyhBqP82yoPzLhsaQXaZqLU8B3jtbNHl8boohu4OOfGQZJ6Ue9uWOTE4i+zbjfTLCSVr8+qD497/5IDPOUoWFXQalDRVi5ezmlAQyRW01eOfiarOyMX3P8RyPE3fKqDXymyCu72eDPA83j3O+AEdgmm2Zai6LqLQPfhTX+MWixh+0lLJjq0wh1pVdqgoFUi4vhTZCCTQPesQ6mL1RirbZ4zgYCWOmFNQkMJfjyXjCkgLhAQ78mH6gDaRy9IxdyQMUlNUVCsZhItdtr4unOBQ9XKf9dASVJRLxVdsulae/ruo6Pn5tyPHAXbDgnE7tDvEU2vMaklupytMAxW6gyC8Pfad+Fdyl59D1h8ps97qWWCbV9xi7BSxLUgWEs2+J6zynOhy4DabsUXvc3rDA1LE6T9QYo5+FhNpEiznLset2CPsBsMAQ+Q9KokzY
+sidebar_class_name: "get api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get note by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/notes/{noteId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get note by ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"noteId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The note","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"categoryId":{"type":"string","nullable":true},"title":{"type":"string"},"content":{"type":"string"},"color":{"type":"string","nullable":true},"dateCreated":{"type":"string","format":"date-time"},"lastModified":{"type":"string","format":"date-time"}},"required":["id","title","content","dateCreated","lastModified"],"title":"Note"}}}},"401":{"description":"Invalid or missing authentication token"},"404":{"description":"Resource not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

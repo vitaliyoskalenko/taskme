@@ -1,0 +1,71 @@
+---
+id: clear-completed-tasks
+title: "Clear completed tasks"
+description: "Permanently deletes all completed tasks in the specified list."
+sidebar_label: "Clear completed tasks"
+hide_title: true
+hide_table_of_contents: true
+api: eJytU8Fu2zAM/RVBpw3wYrfYZb4VwwZ0wLCgzbBDkQNjM7FQWVIlOWhg+N9HSk6bJttOO1miKfLxvcdRRtgFWT/I6lqsIDwGuS5ki6HxykVljazlEn0PBk3UB9GixohBgNaisb3jWysiPxTKiNihCA4btVUU1irEhSxkwGbwKh6ozSg3CB79zRA7uq4n6ubAQ091fEgJhi7UlR/ftvRaMQYHlF9Ij0+D8tjKOvoBqXLTYQ+yHmU8OH4VoldmJyeu+/zB2aDyEJ8qfhycNQED519XFX/eTsoEJNSi0QyzlVMhP1ZXl5m3Zg9atcJ60asQqKcAGolIUg1wjoj2EQ0BKSQ+RzSBYnm+RyQiTsEVkmoNyCAZNlHR2ZZntiHKIo9ey5JxhXLMvExl4rxMOBPFfn8kcPCa8rsYXajLlNfjwnlbglPyQlxv26FJiHMNyRiOit0zv5mwU91e6OYmcpaB7zmJIvnw1ZJzIsW//VpddKZYJknYTQRlyDBbb/tzHtG0zioTE5XKbG1qr6LGo2DfwcCO+psobpa3F33uvtyv+IfYslicy2rFo9ShyPYthLHk7PQh++budAXTip22G9BEEPimY58DmV9r2FhPaXvM1fpXHOCcnkvwArA0GczVolpU7CoWlx7wMLPhP7OU50t1Ps0oG2vITvF/7OUsYiSDlk6TBAwsuWecXfeQ1pBR1C/7eMSVrUdm6dinlDqOGwj40+tp4vDTgJ5Xfs3+9go2rBjZs1WBz+TwLeiA/xjw3d287u/F39DOQTCH1zWSdMxLNmOe1tPJWi1/3LMZ4a2Tz5ybkP6xOE2ZMlZsXZr02Gve9/U0Tb8BhyrXZQ==
+sidebar_class_name: "post api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Clear completed tasks"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/lists/{listId}/tasks/clear"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Permanently deletes all completed tasks in the specified list.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"listId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Task list cleared"},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

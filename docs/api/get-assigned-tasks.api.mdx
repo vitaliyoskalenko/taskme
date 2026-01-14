@@ -1,0 +1,63 @@
+---
+id: get-assigned-tasks
+title: "Get assigned tasks"
+description: "Returns all tasks assigned to the authenticated user across all lists."
+sidebar_label: "Get assigned tasks"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVm1vIjcQ/iuWP7USCXDtp3yjB5fQXl7ES6NThE7D7iz4smvv2d40CPHfO2OzYVm4KtL1C3jteXk888yMt9LDysmrJ9nrixm4ZycuxN8K/3Fy0ZEpusSq0iuj5ZWcoK+sdgLyXPggCs6plcZUeCP8GgVU9Ku9SsDTZuXQCkiscVEnV867S9mRDpPKKr8ht1u5RLBoB6RJn4sdeX29KI1T0Wm/15EWXWm0Q4K5lR96Pf47RvaZLAuTRVTkIDHaEw4WhLLMGQ8Jdr85lt5Kl6yxAF75TYmkD9bChvSUx8I19s3yGyZetgMxCI6E0gLiim9GUqU1JVqvIlKVNiw5b5VekYyu8hyWOe15W2FH4isUJX9KtvS1/+E3WCZy15Fsc3zGBB2VFDF99rBtn+3AEvNzkgfPf1QbsbImQcvQSUe5j4bPKIsNzaUxOYIO4cigyim+GeQOg8LUUxDfK56iB5W7d+EvrTKRLGeuoKuCuXt3fzeiz8/3j/R7OxqO57e0uBlf30QW793Xcl75cO+H2jRDqnBIrD3nJTO2AFZPSeDCqwLP4bRYKJ2i/VkrJYIfHuLT5kubmS3OEe/tC5zP9z5Yw8EX+nocjf7iYN3fzW7o/8toMOFY1aGZBBzj2hwhyyx+r1AnzUSwuxXaZor7HEvYuPvsEfH5HTV2go8gRYiz+Whagx3e1evZzXyyX36ajONiOpjNJ/vlPGgvdmeCizr9ueyYhBoX1V6C7mwUWgq7djzrvNKBq5axW/0wQjJRNqlysL9wX/41kJTAfbQIx3X5X5cIDcD5W5OqTL1fKzDxe6VCRT/VvahuJsdAWh4aJGLcZGvH5n7v9U/79lgTuVQqjBWFolmiV80RQjI0WJ5RBzz4Si3d0Z4LY+MZiYjNUdGRZKtCHhk8RAr0a0Pg5QpDmQDPF9kNMe/WcyvMIvuCNtqsLBWOXHtfuqtuEC3wkgqsC6U6GQIP1qRVEkBGG5Ld1qNtyiMmsqQ54N6iz07YexDjZhmEaCcuPtU5+fNxduKZ9mJchCEOKZ6/mTVFO3TE9tIQN0P0lM5McN9IjbgFDSvyr70YPIxP/ExG0xkfiIzzw7KcoLeB5zpx3naENh7jH1EgeqdP0KlY5WYJOQUIbLKOAzMxXCPGktgLRmvFAUdjXPNLgVMTwfQve5e9MPyM86QQeiOE2F2jb7xE9k+Ao6tsDy+C/+8Vs8+kJ2J2y5zywOgChbZ7uj3JGs0b4Ygia7oAn223S3A4t/lux9vUXC2/iBZMZKtiG3niPrZGoLnSYP0gSbD0B8afPnKOKuB6xByCYwK2CBes131Ibxq2CWaQmDHjCGpnD2JfmQuq7n8B9tp+kg==
+sidebar_class_name: "get api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get assigned tasks"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/tasks/assigned"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns all tasks assigned to the authenticated user across all lists.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of tasks","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","description":"A task in a task list","properties":{"id":{"type":"string","nullable":true,"example":"task_123abc"},"listId":{"type":"string"},"parentId":{"type":"string","nullable":true},"label":{"type":"string","example":"Buy groceries"},"isCompleted":{"type":"boolean","default":false},"isStarred":{"type":"boolean","default":false},"details":{"type":"string","nullable":true},"priority":{"type":"string","enum":["NONE","LOW","MEDIUM","HIGH"],"default":"NONE","title":"Priority"},"dueDate":{"type":"string","format":"date-time","nullable":true},"reminderDate":{"type":"string","format":"date-time","nullable":true},"repeatDetails":{"nullable":true,"type":"object","properties":{"interval":{"type":"string","enum":["DAY","WEEK","MONTH","YEAR"],"title":"RepeatInterval"},"frequency":{"type":"integer","default":1},"daysOfWeek":{"type":"array","items":{"type":"string","enum":["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY"]},"nullable":true},"endDate":{"type":"string","format":"date-time","nullable":true},"occurrences":{"type":"integer","nullable":true}},"title":"RepeatDetails"},"subtasks":{"type":"array","items":"circular(Task)"},"dateCreated":{"type":"string","format":"date-time"},"lastModified":{"type":"string","format":"date-time"}},"required":["listId","label","dateCreated","lastModified"],"title":"Task"}}}}},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

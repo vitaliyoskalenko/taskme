@@ -1,0 +1,63 @@
+---
+id: get-upcoming-tasks
+title: "Get upcoming tasks"
+description: "Returns tasks with future due dates for the authenticated user."
+sidebar_label: "Get upcoming tasks"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVttu4zYQ/RWCTy3gxPZ2n/Lmrr2J280FvjRYBEZBUyObG4nU8pKNYfjfO0NasSy7RYDtgy2KHM4cnTmc4ZZ7sXL86on3+mwm3LNjF+wvBT8cX3R4Bk5aVXllNL/iE/DBasd8NPuh/JrlAaeAZQF/woNjubHMr4GJgP/aK4mzGQsO7CXvcAcyWOU3GG/LlyAs2AEa4utih+FeLyrjVIr2sdfhFlxltAPEt+Ufej16HEP6opxnJk+QMIA02mNYMhRVVVB4NOx+c2S95U6uoRQ08psKcL+wVmxwn/JQusa8WX4D6XmbgUEMxJRmIo0KjI9WlTUVWK8SUpU1PDlvlV6hjQ5FIZYFznkboMPhVZQVvXLy9Hf/w29iKfmuw8nn+IwLXKqQMX12se2f/IglFOcsD5F/Dxu2skaCJei4R7lPhtYwaY2dS2MKEDrSkYtQIL+5KBzEDVOPJL7XPAMvVOHehb+yyiSxnPkEHUoS7d393Qhfv9w/4v/taDie3+LgZnx9k+S7D1/beeXjdz/UrglSgCGK9FwUFHMpaDtp+8KrEs7htFAqnYH9WS8VCD888NPWS1uZLc2h7u2LOJ/vPVnDwVd8exyN/iSy7u9mN/j8OhpMiKuamknEMa7dIbLcwvcAWjYTQeFWYJsp7hOXYuPu80eA53ecsRN8CClBnM1H0xrs8K4ez27mk/3w82ScBtPBbD7ZD+dx92J3hlzQ2c9lx0gsXHj2JLizLLQ27Np81nnFBReWqVr9K0NcKitDIewvVJB/jSJFcJ8siONz+V8fEQuA87cmU7l6/66oxO9BxRP9VNeiupgcA2lFaIiIcKOvHbn72Ouf1u2xRnGpjGG3KJVziKfZMdCGefMMOuKBVyzpDudcbBvPgEJstooOR18BqGVQEynBrw2C5yuIx0RQf+HdyHk3VNKU6euxJb2ATT6DxYPD195X7qobTUu4xAPWFZU6aQIP1mRBRpDJB6ewdWubUotJKmk2uDf2KQhFj2ZULKMRzqTB5zonfzzOTiLjXOKFGdSQ0thZc2vKNnWo9sqgNiN7Sucmhm+kht0KLVYYX3s2eBifxJmMpjNaiN28JFtK0FvDc53UbztMG+z58YESSNHxVeiMrQqzFAUSJKxcp4YpDZ0RY9HsBZK38oCj0a7ppkCpSWD6l73LXmx+xnncEGujiNxdg2d1Rt+uAEefsj3cCP6H68s+hR4V2a0KTADBitrZ7nX2xGsYb0pDbawROa1tt0vhYG6L3Y6msapaugotSMFWpfrxRAVsDQIbSkPuAymh8gepn95ujqR/PSLxiGPltZQWvdcFSG8avhFmtJiR1BBqZw9ifyQXeKz/Ab0uebQ=
+sidebar_class_name: "get api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get upcoming tasks"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/tasks/upcoming"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns tasks with future due dates for the authenticated user.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of tasks","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","description":"A task in a task list","properties":{"id":{"type":"string","nullable":true,"example":"task_123abc"},"listId":{"type":"string"},"parentId":{"type":"string","nullable":true},"label":{"type":"string","example":"Buy groceries"},"isCompleted":{"type":"boolean","default":false},"isStarred":{"type":"boolean","default":false},"details":{"type":"string","nullable":true},"priority":{"type":"string","enum":["NONE","LOW","MEDIUM","HIGH"],"default":"NONE","title":"Priority"},"dueDate":{"type":"string","format":"date-time","nullable":true},"reminderDate":{"type":"string","format":"date-time","nullable":true},"repeatDetails":{"nullable":true,"type":"object","properties":{"interval":{"type":"string","enum":["DAY","WEEK","MONTH","YEAR"],"title":"RepeatInterval"},"frequency":{"type":"integer","default":1},"daysOfWeek":{"type":"array","items":{"type":"string","enum":["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY"]},"nullable":true},"endDate":{"type":"string","format":"date-time","nullable":true},"occurrences":{"type":"integer","nullable":true}},"title":"RepeatDetails"},"subtasks":{"type":"array","items":"circular(Task)"},"dateCreated":{"type":"string","format":"date-time"},"lastModified":{"type":"string","format":"date-time"}},"required":["listId","label","dateCreated","lastModified"],"title":"Task"}}}}},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

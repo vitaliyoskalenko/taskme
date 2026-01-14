@@ -1,0 +1,71 @@
+---
+id: get-task-by-id
+title: "Get task by ID"
+description: "Get task by ID"
+sidebar_label: "Get task by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vttu2zgQ/RWBTy2gxk7aJ795azfx7uYCXxAUhbGgqLHNRiK1JBXUMPTvnSElW7a0QIAA+2KT4lwOz9x4YI5vLRv9YMObaMnti2XrmFkQpZFuj98PLAFuwIxLt8PtusLjghuegwNjvYDCDRuxTFo3S1nMpMJdwVE+Zgb+LaWBlI2cKQEtix3knI0OzO0L0rLOSLVlVRUfDTmE8Q5DCPDXp0Jb6aRGA5+HpGwLrSxYkr8ZDukvBSuMLIIQW+4gIr/oSWjlQDmS4UWRScFJZvDTkuCh61gnP0E4VDy3OPb2IqkiHlbED0oVRhdgnAxgZNq9QsxUmWU8yaC5LPzieZE13PxzffOZJ4JVccN5lwUfJLxF3+GlfbLDE8j6JE+e/yj30dZoAYago460XzWdOWj7SLTOgCtPx4aXGfK44ZkFr7Bw3Ji3iqfguMzsm/AXRuqQsD1XUGVOCf7w+DDF7d+Pz/h7P53MVve4uJvd3lHKH903ck46f++nxjRBKmHCHfR52WiTc1JPUeCTk5jJPTgN5FKlYN5rpQDuJid+LvPlMjMvcg7z27zy/njXZE3G33H3PJ3+RWQ9Pizv8P/7dDwnrhpq5h7HrDGHyDZUpqBEOxDkbgumHeJr4pLv7ePmGeClJYvpwfdU+Q7y3sg3+BBSgLhcTRcN2MlDs17ereb18tt8FhaL8XI1r5crr72uesgFlb4vOlpg88TaE2B7WbhQqC75bOKKB7ZMnO/J/8kQE9KIMuPmAzXvjz5JEdxXg4agt/Z7LuEbgHX3OpUb+Xatqt2Vf5z6f2gm50AuPLSSiHCjLbL2ZXjd7cwzhbkl00ibKJfWIpyI4yzC3lZ35sjpF1DM63/p6s/B6tIIiJR20UaXKvXIz4VuwYUmneyj2cT3PZwBFg/DiHsBzOj2WIkZoiqBxgsNHJyGO40ssC34eqOZNWIDosQODoGZauBjOTiE+VYxmrPmtZmipcGCZDvnCjsaeNEcrrBwB7yQneHyZHRaCn/7YINVrbG9oBEVsq89vI9RJSesHqG+CXsh/BIW35pY//m87HjGb4HwSGNuSgVptDE6v4wJVlGhMec911JttHffCnl0zxXfon/lovHTrONnPl0s6QBDhoEnWYr8cZDa2K/xD8MK4Q9TK3jHLVdptM10wjMkiBuxC4NYaKo9bVDsNQz8YDvgaI37K4owhiaAub4aXg39UNXWoYLvueGx0smcs2scKXeYUIMiQ8LIjI/1oU6TUDkWVUfHEgpVj1/qtxAGd4euSfhwSLiFlcmqij5juzX0TltTRhoZGgumUyotrdN6nnZwHV857MO8LuKPEYv78Ta9R+1Pic9wGcqiRk0vuP/Ra81MRU18BxyHaqtSx0JA4VpqnZfcWdXeTinR+XmVXFSFt94LCSPiJZZUFlV1Qhj60hp72293stkU
+sidebar_class_name: "get api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get task by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/lists/{listId}/tasks/{taskId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get task by ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"listId","in":"path","required":true,"schema":{"type":"string"}},{"name":"taskId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The task","content":{"application/json":{"schema":{"type":"object","description":"A task in a task list","properties":{"id":{"type":"string","nullable":true,"example":"task_123abc"},"listId":{"type":"string"},"parentId":{"type":"string","nullable":true},"label":{"type":"string","example":"Buy groceries"},"isCompleted":{"type":"boolean","default":false},"isStarred":{"type":"boolean","default":false},"details":{"type":"string","nullable":true},"priority":{"type":"string","enum":["NONE","LOW","MEDIUM","HIGH"],"default":"NONE","title":"Priority"},"dueDate":{"type":"string","format":"date-time","nullable":true},"reminderDate":{"type":"string","format":"date-time","nullable":true},"repeatDetails":{"nullable":true,"type":"object","properties":{"interval":{"type":"string","enum":["DAY","WEEK","MONTH","YEAR"],"title":"RepeatInterval"},"frequency":{"type":"integer","default":1},"daysOfWeek":{"type":"array","items":{"type":"string","enum":["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY"]},"nullable":true},"endDate":{"type":"string","format":"date-time","nullable":true},"occurrences":{"type":"integer","nullable":true}},"title":"RepeatDetails"},"subtasks":{"type":"array","items":"circular(Task)"},"dateCreated":{"type":"string","format":"date-time"},"lastModified":{"type":"string","format":"date-time"}},"required":["listId","label","dateCreated","lastModified"],"title":"Task"}}}},"401":{"description":"Invalid or missing authentication token"},"404":{"description":"Resource not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

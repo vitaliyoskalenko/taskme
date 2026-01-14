@@ -1,0 +1,71 @@
+---
+id: leave-shared-list
+title: "Leave shared list"
+description: "Removes the authenticated user from a shared list."
+sidebar_label: "Leave shared list"
+hide_title: true
+hide_table_of_contents: true
+api: eJydU01v2zAM/SuCThvgxe427OBbDxvQocWCNMMORQ60zcRCZUmV5KCF4f8+UnLbtN122MX6MMX3+Pg4yQiHIOsbWX0SlyrEIHeF7DC0XrmorJG13OBgjxhE7FHASF8TVQsROzEG9GLv7SBAhB48XWnKsZKFDNiOXsUHSj3JBumfP6e3dNzNhODAw4ARfUgBhg6EpDp6qRjTAcUW0uPdqCitrKMfkbK2PQ4g60nGB8cvQvTKHOTMOe8/OBtUJv2l4sfBWRMwcPzHquLlZWVXODRUgcZ9TMTlXMjP1dnbwAtzBK06Yb0YVAgEeaoExYhob9EQj0LifUQT6C6XdoukwSm3QlKuEZkjsyYVettxyZYIFLnyWpbMJ5ST6uZSIxwxaeqPj4qNXlNUH6MLdVlGCLcDrpy3JTglX3dw7W03tolnziEZ+bFF1yxqVum0UU8aM4hctOdzDqKbvPlm/QCR7r//2r5BprssjbBNBGXIIdkvL9VD0zmrTEwCKrO3CV5FzXhbKk5cgYED4ZsoztcXb3A2X6+3/EPsuUUcyz1iWVJjQ5H2tBgbMS9qv6DTEUwnDto2oEkg8G0vlCFPt1ZraKynsCPmbMMzD3BOLynY8dyaTOZsVa0q9hK3lB5wMYvDL7mVp7PyupJJttaQgeL/Dt7StEg2LJ0myZlIcsu0eOtGJkkotk4Dl+1FhujZgfR7mhoI+NPreebruxE9z/GOnesVNNwVsmCnAu/Ju3vQAf9RyLvNMsfvxd8YLpdgHp4HRNI2jw/xnHfzybCsf1yz2eClU185M7H8Y2KqMEVs2ZpU5SPOMsW7eZ5/A1n+wMY=
+sidebar_class_name: "post api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Leave shared list"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/lists/{id}/leave"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Removes the authenticated user from a shared list.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Member left list"},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: update-note
+title: "Update note"
+description: "Update note"
+sidebar_label: "Update note"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVVtr2zAU/itCTxvkWlq2+W0rHXTQUdqUwUoelEhJ1NqSJsldQ/B/33ckN85tYy+2dXTu5/uONzyKZeDFIx+ds+82qsCnPR7UvPY6riHf8JkSXvnPdVzhOG1w7YQXlYrKh6RgcOAFN7C+lrzHtcHJCej3uFe/au2V5EX0tYLn+UpVghcbHteOrEL02ix5Q35JWYX4xco1aRzazq2JykS6Es6Vei6itmb4FKwh2ZFrO3tS84gknLdO+ahRHG5hppbWr5HrURo9buqyFLNS5aBNj0cd6XSU8F4+J+5K6//Lv0Q6l17heTKfhfWVQIyk148arYZRKUK8sVIv9P9bNbvTeGzr6qrYz+QgxHTbB04gucuDgk/y+tp3NmiaBS/ORxQlOGtC7vbZaEQvqcLca5eVkg9WO5lCwcP5KaVr8yJKLVmLCubEurRCMuvZDgCT9fjv1tCudAhoCxOAMCptccOifVYmtWXf8iHlxQjOaIN6RXcCbjLWnxWguVtxjyNOrahygjCyWllJ+K8T8ogFBR+SszDcZIo0nBjmX974U/sSOqsYXSiGwyjCc6UGwOxQOM0Ps7v1VtbzVED2wZsdwt4TB3Ljd2m7BQgF4S0L6ZyVIMkfX99g8+3H5CgyZLlnzM6i0EZJtvC2OmyrMtJZbWLqLHHzrmP11auoXGbTLgs73L6BbCvYcmxXlKjVCfYYBMCdnfdHH/pnnybji+JiXJx9HIw+jH8eQvofmg3tsIVNfWsTmmAq7EYYsUTjTGSfb6+PGnR3dT+hC7Yg0JEuoY7myUodYuilb7wSGtILqeS24SiMZMvSzkSJyQo/XzFtmGAoFwvDeqi9qOyt6vLYWYQDwiIwlZMZD0aDEVUCpEYYUDHtot4H+F4NW6BE4H7oSoyZfCSEblo0P6ZNH2BatCsfAFwhCl1tNjMR1IMvm4bEmLynv8iUaOJ1XnyAvNSBvjGFhSiDOsqiG/u7u3ZnvWeEj1PZtUJh1h0bOT4zV9scmyk0V0pIwL0j8mWO05+Qi8746PeyR+3bByLHrP1LVVaSiRe/6XeHZ4ptUymJiEm2AfjMssbYcJ9dEj/EPj0P6JgSPVkd2pw0JsTHptkW2+60KZz/ARAsrPI=
+sidebar_class_name: "put api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update note"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/notes/{noteId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update note
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"noteId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"categoryId":{"type":"string","nullable":true},"title":{"type":"string"},"content":{"type":"string"},"color":{"type":"string","nullable":true},"dateCreated":{"type":"string","format":"date-time"},"lastModified":{"type":"string","format":"date-time"}},"required":["title","content","dateCreated","lastModified"],"title":"NoteRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Note updated"},"400":{"description":"Invalid request payload or parameters"},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

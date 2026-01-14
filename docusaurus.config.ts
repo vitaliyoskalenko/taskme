@@ -11,6 +11,8 @@ const config: Config = {
     v4: true,
   },
   
+  themes: ['docusaurus-theme-openapi-docs'],
+
   url: 'https://docs-taskme.netlify.app',
   baseUrl: '/',
   
@@ -43,6 +45,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          docItemComponent: '@theme/ApiItem',
         },
         blog: false,
         theme: {
@@ -52,6 +55,28 @@ const config: Config = {
     ],
   ],
   
+  plugins: [
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'api', 
+        docsPluginId: 'classic',
+        config: {
+          taskme: {
+            specPath: 'specs/taskme-openapi.yaml',
+            outputDir: 'docs/api',
+            sidebarOptions: {
+              groupPathsBy: 'tag', 
+              // categoryLinkProperties: { ... }      // optional
+            },
+            // version: '1.0.0',             // ← add later for versioning
+            // proxy: 'https://cors.isomorphic-git.org/', // optional for try-it-out
+          },
+        },
+      },
+    ],
+  ],
+
   themeConfig: {
     colorMode: {
       respectPrefersColorScheme: true,
@@ -85,6 +110,11 @@ const config: Config = {
             {
               label: 'n8n Integration',
               to: '/docs/category/n8n',
+            },
+            {
+              to: '/docs/category/taskme-api',
+              label: 'TaskMe API',
+              position: 'left',
             },
           ],
         },

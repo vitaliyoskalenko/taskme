@@ -1,0 +1,71 @@
+---
+id: mute-unmute-notifications-for-an-entity
+title: "Mute/unmute notifications for an entity"
+description: "Mutes or unmutes push/email notifications for a specific entity (e.g., task list or task) for the current user."
+sidebar_label: "Mute/unmute notifications for an entity"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVctu2zAQ/BWCpxZQLKePi29pkQIpkDZIXPQQ+LCS1jYTimRJKo0h+N+7Syqx5KS99mJJy+U+Z8a9jLAJcnEr5x/FNxvVWtUQlTVBrgrZYKi9cvwtF/KyixiE9aIzbXp1XdiW2ILSwoyvijU5gQgOazYKNFHFnXiDs82sEBHCvdAqRA7FH2+Tf9yiqDvvyVl0Af1MFjIgWegq1dfLCsGjP+vilj5XeyrP468OQ/xkG/Lo06fy2MhF9B0WsrYmUjQ+Auf0UF15F7ibXoZ6S7XzW9w5pP5sdYd1pLTOW4c+Kgx82mJbob9oRp4hemU2cl/I3No/D5fJ/MoxD3F0UFmrEYzc74tRK7eH/KNsk9hDJBoImTQOm5os8zpPimJz9McTZ4PKW30/52zBkVNu9918zo/p6ifBBKdryoyCRoSurjGEdaf1jtv68FqAC/MAWjViWJlwsNMWGoaAAw8tRvQh3z79+23yblUIND8BhAOeQa5JRHuPeXT4SEsPCcGMmnskbIw7LiTF6pA7ZwxR5q2lOUtySLsHxpcsJ4Au04AZj/6B6+TAndfkt43RhUVZMo5bnBFySnBKHlPnytumq1OlOYbk3E/wvmEk5umPQf6MDE7C2ZMbIyU5kSW/fLG+BYK5/Ppz+SIz2fJwhK0iKEMLW3vbHs8PTeOsMjGNkBlyfeDW+SO0TuOUC084HlPg2LacIP4J8ExOSqLM2qYeB8wuWRYuwcCGmiQNOLu6eNHM9fnNkg+SYLTsy1B4FpSQxYUetD3Mj8MSCwGmERttK9C0BfD1VihDOlVbraGyntweMEdrD3WMpIMlifefizmdzWdzhiwjhy5wMwbaJ/4N/HhNGc2giMf99QfJ+g9iO4AtEoFKpwkq3FtCeT+w4lZOMo+EZ8vkofO+ryDgD6/3ezYThDyL94pJ5xVUvGnSbrqA0BCEDwz9nDs/GRRt4OhL4Z5w9ur7DSO+Gv4AWtvwHQ+/yci/C0kv1uVq+R+Cbb3UYDYd7ZfOc0wGPUw5d8SxVOlwBGY3qpBaTh5LJhm1XQwNDYq0ouB/AL55lt4=
+sidebar_class_name: "post api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Mute/unmute notifications for an entity"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/notifications/mute"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Mutes or unmutes push/email notifications for a specific entity (e.g., task list or task) for the current user.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"memberId":{"type":"string"},"entityId":{"type":"string"},"entityType":{"type":"string"},"mute":{"type":"boolean"}},"required":["memberId","entityId","entityType","mute"],"title":"MuteNotificationsRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Notifications muted/unmuted successfully"},"400":{"description":"Invalid request payload or parameters"},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

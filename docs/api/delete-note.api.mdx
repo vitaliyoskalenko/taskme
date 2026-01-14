@@ -1,0 +1,71 @@
+---
+id: delete-note
+title: "Delete note"
+description: "Delete note"
+sidebar_label: "Delete note"
+hide_title: true
+hide_table_of_contents: true
+api: eJxtU8FOGzEQ/RVrTq20TQKil70hESSqtkKQqgeUw2R3klh4bWN7EWjlf+/Megsh4WR7/Dzz5s3zAAl3EeoHWFyo3y5RhHUFkZo+6PTK8QE2hIHCZZ/2fFxnvvYYsKNEIY4AyweowfLrmxYq0JZPHhlfQaCnXgdqoU6hJ87c7KlDqAdIr15exRS03UGWvC/fvIs6accJvi/kcfTORubE+PPFuSwtxSZoX0AgjFVLhsm0kCu4WJydgm7sMxrdKhdUp2Pkcgq5G7JJNygYldwjWeZQHb28GjMr6Yx7oZdENvJNafuRWJ9DzhVwnZ6Eu3TDCu0dNw6FH1RFkxrmki/OhyJYBtE7PP9Xsw+GMfuUfKzn84TxsaOZD26OXsMxwdvg2r4Zeyg5IB+M717ELuodDvFNeykC00zkXEAcKZtrFzpMHP/xd3VSmWNFNuU2CbWlVm2D646VJdt6p20axdV268byOhmpt+Lm1C+0uOP6NqnL25uTOnfL+5VcqK2MT7AyP5FFGR1TrMY9L6Oo46K3U3U+om3VzrgNGhYIQ7NX2ipUjTMGNy4w7JlKtu6dB3pvphQzmSqPppA5my1mC/EZzzzxA2lmcv9Hq3zo4U3vxA6ae8NqSY5x0MNkiofx+0R+Wk//iOe45ypyNQwbjPQnmJwl/NRTkK+5FsMFjRsRk53T6ih7ttwWTaQTFo2zbGAZ6Je76Vt+VVzxU3ZTEO3ru6+Bt8X1E8e8zgc+v1r+XK6WjMGPNjuy1cj10/Tc54hYia9yfqs2fc91zvkf7Dea0Q==
+sidebar_class_name: "delete api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete note"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/notes/{noteId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete note
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"noteId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"202":{"description":"Note deleted"},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

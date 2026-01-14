@@ -1,0 +1,63 @@
+---
+id: list-all-notes
+title: "List all notes"
+description: "List all notes"
+sidebar_label: "List all notes"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1v2zAM/SuCzm7iDj3lFgxd0WEdijXDDkUOjM0kamTJleiigeH/PlLOh/Nx6MWySIp84ntUqwlWUU9edX6nfnvCqOeZjlg0wdCW7a1eIAQM04bWvJ137P68qX00ZLzTk9s80wFj7V3ks5NWf8tzWUqMRTB1H6R/mUjKL5VLFTJdeEfoSAKhrq0pQALHb1GiWx2LNVYgf7Stkc9DCLDlc4awigO7X7xhQeyog68xkOkxmHIQEykYt9IdVwXClQ/bxyvuTLvGWlhYtlFokMPJkOyuJTrCv+KzPnwpf8lwvgfk71U8Sx8q4Bop7oZMhZLeQqQnX5ql+fqpTih6b0yQI6/Snf3ljlc5hXNWZ35ohhaNcMZOkt7lt5dUP7oPsKZUPqjKxMioFLB2uMaOZUV+gy6huiISsPagEvxkaJGdMQlxgyzIofgyzaUaFBGKLCuktecb6hUmSYAoVo/32SKGDwx9qiZYdq2J6jgZjwnipsIRa2gMtdHnuJ6DL5siQe9z6G4wIy+i1V52w0k5MCNFpHoK430fxJb+58eer5//ZheV2dZ3S/kFgXFYqmXw1XlD0ZW1N0yi9NS4pU/ld4TN+HLqCRysuL4jNX1+vKjz5/5lJg61FNYkVmiTtijLpMQs/fOSepkWFkZfnbfgSrWyfgGWGwShWCvjFCieBBa8Dxz2gX226ohjMPcjYZKp6cHcjvJRLlJnnokPyGUcpN5dKOTkGoeWEwtnXFtumKRJXLc7Obxqt3/k1pxeDG27gIh/g+06Mb83GOThm4u6guknlt89PoBQMnNHKU6LAms6yvDyLTuR5cO9MAyn8jiTQ8q+f/TcdpCbYaaImeiBoWY7ELtpmvNE/gcbrP6h
+sidebar_class_name: "get api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List all notes"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/notes"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List all notes
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of notes","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"categoryId":{"type":"string","nullable":true},"title":{"type":"string"},"content":{"type":"string"},"color":{"type":"string","nullable":true},"dateCreated":{"type":"string","format":"date-time"},"lastModified":{"type":"string","format":"date-time"}},"required":["id","title","content","dateCreated","lastModified"],"title":"Note"}}}}},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

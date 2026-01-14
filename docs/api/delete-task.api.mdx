@@ -1,0 +1,71 @@
+---
+id: delete-task
+title: "Delete task"
+description: "Delete task"
+sidebar_label: "Delete task"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1rGzEQ/StiTi1sbSekl70F4kJKCyFx6SH4MN4d2yKypEjakLDov3dmtXEcO7dATyvNzud7b9RDwk2E+h5m52qB8SHCsoJITRd0emF7DyvCQOGyS1u+LjP/9hhwR4lCHBwsX6AGo2O6bqECbfnmkf0rCPTY6UAt1Cl0xJmbLe0Q6h7Si5eomIK2G8i52idK3MYnEnGDz9+8izppxwm+zyQ4emcjRfE/n53Lp6XYBO2LE8joqiXDU7WQK7iYnZ06XdsnNLpVLqidjpHLKWRYyCbdoPio5B7IlviL0/hbiq4LDSnrklq7zrYy95HT1dCEEhB4bHpOZCP/KVA/EHNyOF4F3FJHMqYMzqxsHWMEZRSoCnw1TIWdOO0LSXkq6flaoM4glIenV0K7YDhkm5KP9XRw3dHEBzdFr+G435vg2q4Zpi85IB8o6E5oKrgf6mjPmhSBkU25Fye2lMMPF3aY2P7z7+KkMtsK4MqtEmpLrVoHtzvmhGzrnbZpwFrbtRvK62TolfffaHHD9W1SlzfXJ3Vu53cL+cGUMfHiK8wLLGpAtRrO/GFaqXz0eqzOV7St2hi3QsMAYWi2SluFqnHG4MoFdnsqdJfcpQ/03owpJkIyU1OaOZvMJjNRGEsgcYAMM+7Ne+W8m2GPd2JBTb1htCTHQHQ/auR+2ODIofV+lYfBxDLuJDO75bri3PcrjPQnmJzF/NhRkPdiKYoMGlcCL2up1VHOrMk1mkgnfTXOssKF4i+344p/VVL5o35HI9qXN+EDH8tajF3LS/Ifq47I5GU+WL+r+a/5Ys4++F7uR/IeEPowPaM7eCxE3zm/VSsPzDLn/A/bJvQ2
+sidebar_class_name: "delete api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete task"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/lists/{listId}/tasks/{taskId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete task
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"listId","in":"path","required":true,"schema":{"type":"string"}},{"name":"taskId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"202":{"description":"Task deleted"},"401":{"description":"Invalid or missing authentication token"},"404":{"description":"Resource not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

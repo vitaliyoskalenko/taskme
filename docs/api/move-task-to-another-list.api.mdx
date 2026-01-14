@@ -1,0 +1,71 @@
+---
+id: move-task-to-another-list
+title: "Move task to another list"
+description: "Move task to another list"
+sidebar_label: "Move task to another list"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9ld1v0zAQwP8Vy08gpU1abQzyNtCQhpiYuiIkpj5cYrf1ltjBdrZVVf537uys3/CCxEsS23fn+/jdZc09LBzP73k2ZlNwj47PEu5k2VrlV7i/5oUEK+1l65e4nHV43ICFWnppXRDQuOA5r5Tz14InXGlcNYDyCbfyV6usFDz3tpVouVzKGni+5n7VkJbzVukF77pkY8ijG/9gaBaFpfMfjViRxKFuabSX2tMRNE2lSvDK6PTBGU17R6ZN8SBLj0401jTSeiUdnWr5/DXGfOxFwitw/sYINVfyhEDC58bWgD5wAV4OvMLQMQk7vt7vXHBgDkP0yldk78Y8SarbJIaMNsjKy6AxTlFUPH+XkVXXGO2i3+Mso5eQrrSqiUKcbLAajQly/uyUyLV+gkoJ1meXNbCqDAhmLNshImiP/qyN0rVyDpPAAJnCOvT5Z948Sh2SsK9JITKCAiUYaINKlhFtmBb5gpV0KBdRfJRY8N3oE463tpKyQGCgj0sjiCoT1ANcOU/JmkvXEeEupctwGUHsUkoLp66wT6/Mt7ZCvaX3jcvTIF/LIeKRQqP4YQC31oi2DDFGG7zbabI7wi1WZrfVNsTQJbwHntZRCHfix+dXjr78mB7djHsxrcwUHpSWgs2tqQ8zL7VojNI+JJ/aYLJtoKsXqBtCbQ/4Lcf7nCNc47NBdjEYf5iOzvPzUT5+P8wuRj+JC6XnJgTWsxuYuwENC4xMe3Z5e30UweTqbkoHbE7gkCyRE2gIRUvCN76QCxlf6EqMC5egBVtUpoAKUw+2XDKlGbDSVBUUxqLYK1v11o+doTAkgrDo0ZnRMBtmFAnhgwohKXFo/Q3SvYg2dfXIbtpUWBWyGIBa90Deh2HqUDXfTNUQJu1sxmPAEkFaEsuos14X4OR3W3UdbWMFLU3wGfWAVVBQzhFdoRx9Y7HmUDl55N5mOvI3k34YvWXkwCm3+03Qq22rcfyMjdg7T7P9P97aJ6iboeRSgsBm2c6GT/GewZRMbJWP/gN70+L22x31VtH/T2ojSMfCM/2Y8BkuNyGW0Mdhb42toRctQoXn0Sa1F+x390E3B09PhofVDRJTames8CbaODVnaPw3mR6q4w==
+sidebar_class_name: "post api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Move task to another list"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/lists/{listId}/tasks/{taskId}/move"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Move task to another list
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"listId","in":"path","required":true,"schema":{"type":"string"}},{"name":"taskId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"newListId":{"type":"string"},"lastModified":{"type":"string","format":"date-time"}},"required":["newListId","lastModified"],"title":"MoveTaskRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Task moved"},"400":{"description":"Invalid request payload or parameters"},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

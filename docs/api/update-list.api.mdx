@@ -1,0 +1,71 @@
+---
+id: update-list
+title: "Update list"
+description: "Update list"
+sidebar_label: "Update list"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVluP2joQ/iuWn1qJ656tepo3CrTiaC8oZFW1K1SZxIC7iZ3aznYRyn8/M3YgCdB2XxJ7Zjw3z/cle2rZxtDgkQ7+ITfCWEOXHWp4XGhhdyDf0xVnmutRYbewXZagzplmGbdcG2cgYUMDKhLaoULCKmdg26Ga/yyE5gkNrC44eI23PGM02FO7y/GEsVrIDS3RJxpzYz+qZIcWp2djJS2XFlUsz1MRMyuU7P8wSqLszLVa/eCxhSRyrXKureAGtZDjefgOVb8k17PLOitsyi9qYpUqfa7pUFmkKVvhKUweLEXs0/yrYcJNrEWOtb3OsZnwNStS27BeKZVyJil6q3Rrlhpvvtgy19XXWBulbeSszjPhsshwau7DyexudAOSm9HHKb7n4ew+nEVfYTkZRdPv43AKrwlsH+bj+9vZ3WdYLqJRGIJw2Qjb8FX1nC4OGVTZTGAk4t8155DSaDGe3k18nMn0uGmFato0g9UB8DKY5WPN4XlhMjp0rXTG0Bnada0AEFy4oZQZe6sSsRav9lKWTew8emAdRvSQ74nnZV1HxMwTIhn8oKeXbq6M8E27HqBnkytpPB6uBgN8tcbOOSApeCBFnrjqwc31JcuZfGapSEgFXpKzXapYQpQmDY5wp4e/Pw3WmTAG+kEYsAzAvII3seqJS9eP9skHl5fLES/+BajBgMbT0RMHBmmW3aEQp+BYPjINZLVVCdJU4QgCySqgfXRm+nuRlBQJUD8f6K3QKei31uYm6PctNCfjPaCVPssFPc1srlVSuAki3gctG3y6QJrynW+y6nEqMAitiNKB0xmBxC8+HWblvy/RWWSQ+X4RtbJMSJ6QtVbZaUu5THIlpHVdRfoMa+KdvrAs92SHRFkP6ZEfa9Fh2o6Cig1rgSe9et9OtzarKcwRT5OlKkFNRA2OOOGDFqRbyIUhv7ruDt53rz5Ew3fBu2Fw9W9v8H747RRDf7BE7pRr5a6qATNyyyTbwF1JS0bz2VmR4XQRoYKsccbRFofcHvBlOm4NL6ks9y9Ixd8UbJlMyCZVK5bCMDEdb4mQhBHoNHCM0mD2zL23rM6j8Xns4ejDGPtkhr1Bb4CVADAsHMBiqk93G0+XP0IWYNbPU5gs9OFAsa/A80hdNXA0EI6KthABxfv9ihn+oNOyRDEMmsZ/iiUiUgvPk4CwRBhc1xd+ksHx40/fhBUvviU4g5cyq4RM7mrgU1h6WoD8yiVYbTlLAFk1X4x9jK6bs/rg2c9Gi0HmD4jDVfXPkqkEj2j2C39+4OniKleGw7yT7WHo5KaA6wK9d4lQZG0mOEG+S/RiZdBiZxEh9MvyWGhFnUtw/j9IwVLP
+sidebar_class_name: "put api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update list"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/lists/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update list
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"ownerId":{"type":"string"},"title":{"type":"string"},"color":{"type":"string","nullable":true},"icon":{"type":"string","nullable":true},"description":{"type":"string","nullable":true},"isDefault":{"type":"boolean","default":false},"isShared":{"type":"boolean","default":false},"sortType":{"type":"string","enum":["ORDINAL","LABEL","PRIORITY","DATE_CREATED","UPCOMING","STARRED"],"default":"ORDINAL","title":"SortType"},"sortDirection":{"type":"string","enum":["ASCENDING","DESCENDING"],"default":"ASCENDING","title":"SortDirection"},"dateCreated":{"type":"string","format":"date-time","nullable":true},"lastModified":{"type":"string","format":"date-time"}},"required":["id","ownerId","title","lastModified"],"title":"TaskList"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Task list updated"},"400":{"description":"Invalid request payload or parameters"},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

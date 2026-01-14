@@ -1,0 +1,71 @@
+---
+id: global-search
+title: "Global search"
+description: "Performs a full-text search across tasks, comments, and notes belonging to the authenticated user."
+sidebar_label: "Global search"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9V0tv4zYQ/isETwng+FEUPfgWLLKLtGhqrL3oIciBlkY2NxKpDKlgXcP/vTOkZEuWnbq7wV5iSRzON+/5spVerZycPsrxb2IOCpO1fBrIFFyCuvTaGjmVM8DMYuGEElmV5zcevnnhgrBQCVrnhFfu2Q1EYosCjKcnZVJhrAcnlpBbs9JmJbwVfg1CVfTXeJ0oD6moHOBQDqSDpELtN2TLVi5JOeAtCdLr044sKhWqAjygCwKGXsiyF7qo2cSXCnBDLwgvlUZI5dRjBaQ1WUOh5HQr/abkG84jmSJ3xz5G30XQI/ZCe6BSreAYq6dbGw8rQDoqtNFFVcjphHEyVeWennugM9IqTFUsAcXV5GapHKTXx7Bz/c+PQ4972A8R1mYCwZGQEyW9Bj853t9uSut0lJ2MObCutMaBY9BfxmP+6TmjTUhpXRq1XrIpsWSe8XxHlWXOmac7o6+OL2773ihExW5qD4VrfbfLr5B42QujzTeFxXKtky62uOK63JflQFgMRXnNKjSrKNhki4xRoqUI+M1DDH2ApHCSwVwLbATpCi7k+V8Zt0yiMalyhVexeD4HzOt+/8w7NlErUSMFZYMGVMe46vRkpeba+fszR4ra60x5e6Vz1z8bSENNrJY5xCZhWUrbBwRO3il5bn5F2QtyN15TfHa7dq89suV7OxurunopKl57BpXtcC04DjsukZCid4tvo+/CELcqtHfmFa7gXALi4SJ87keuaydLccPx8PObMAtrM+sh6XhEXsFwNRyIxe38D54FkselxbuCsnnSgngeq/bs8QxtpnOYra23X1D/zKpoQtsKZCdsXQ87/lxUQR/qTBM29/a7VVBQdmH51Hb9z8J6pwBH8HagL4jaA3u3Y31dB/1FlRx1CBYSnUF6fuIemx4AzhjHhrH8r+NJf8/cm1eV65Q1F9o5JhYtRkEy1ETPYAIgERUwjr5F1vAMRC/aq20gSVcFYUGSLUQw1pask1SbnHrF/EOO4k4JHAVfGwZSIbWjXHtfuuloxF4XMKRYjlSp+xsKbVolwbioI+zYhvLMef/F8LeJzz4JDNIsfX6PQvQlPnxs6uT3vxc9ZPoW4yHskhaCofWcoS2OQwYmLa3mLtox1chsgK9TwzNa/KkMcYMwrG5n9/2KuJsv+CA0T8GygfHxTV4LxAhrihhIYfjRWY1e08VVbpcqbza4NmGK80yySGKvELUVBztaXIIZJKcmGjMZjodj7jBKtKcL7EzNqD61QY692B7a9eeQ3jrBrHtU5pQeNjpU1rauvkfp9qx8Td7wl+2WmeIXzHc7/hxJIdcktSJPcKrgTOUO3vDu6nPditfiFPM9Y1nsn5dD28hAVi+HPU1430Srmfd3Ar7Bcv8TtSbeB+QnfkEdlyT9W0IZAZVSJx5my22SQOlbt3p8tzNnPt0t6o3Xavej9g7aG2JsNi3dVAdBYsH9TbXQGF/Pvyeaof8CAr7K/A==
+sidebar_class_name: "get api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Global search"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/search"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Performs a full-text search across tasks, comments, and notes belonging to the authenticated user.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"q","in":"query","required":true,"schema":{"type":"string"},"description":"Search query string"},{"name":"page","in":"query","schema":{"type":"integer","minimum":1,"default":1},"description":"Page number (1-based)"},{"name":"pageSize","in":"query","schema":{"type":"integer","minimum":1,"default":10},"description":"Number of results per page"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Paginated search results","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","description":"Polymorphic search result (task, comment, or note)","discriminator":{"propertyName":"type","mapping":{"task":{"allOf":["circular(SearchResult)"],"description":"Search result for a task","properties":{"id":{"type":"string"},"listId":{"type":"string"},"label":{"type":"string"},"details":{"type":"string","nullable":true},"dateCreated":{"type":"string","format":"date-time"}},"required":["id","listId","label","dateCreated"],"title":"SearchResultTask"},"comment":{"allOf":["circular(SearchResult)"],"description":"Search result for a comment","properties":{"id":{"type":"string"},"content":{"type":"string"},"targetId":{"type":"string"},"targetType":{"type":"string","description":"Type of entity the comment belongs to (e.g., TASK)"},"authorEmail":{"type":"string"},"authorName":{"type":"string"},"authorProfilePhotoUri":{"type":"string","nullable":true},"dateCreated":{"type":"string","format":"date-time"}},"required":["id","content","targetId","targetType","authorEmail","authorName","dateCreated"],"title":"SearchResultComment"},"note":{"allOf":["circular(SearchResult)"],"description":"Search result for a note","properties":{"id":{"type":"string"},"title":{"type":"string"},"content":{"type":"string"},"dateCreated":{"type":"string","format":"date-time"}},"required":["id","title","content","dateCreated"],"title":"SearchResultNote"}}},"properties":{"type":{"type":"string","description":"Result type discriminator (task, comment, or note)"}},"required":["type"],"title":"SearchResult"}}}}},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

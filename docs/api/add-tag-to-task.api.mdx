@@ -1,0 +1,71 @@
+---
+id: add-tag-to-task
+title: "Add tag to task"
+description: "Add tag to task"
+sidebar_label: "Add tag to task"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VUtv2zAM/iuCThuQxWmxw+BbN3RABwwr0gw7FDnQlmKrtSVNkrsGhv/7SMl1nMdtwC6xRPHxkfzI9DxA5Xn+yFfXbAP+2fPtgntZdk6FPcp7Xkhw0t10ocbrdsBnCw5aGaTzUUHjhee8UT7cCb7gSuPNAuovuJO/O+Wk4HlwnUTPZS1b4HnPw96SlQ9O6YoPw2JyFBDGPzjaJmXpw2cj9qRxalsaHaQO9ATWNqqEoIzOnrzRJDtzbYonWQYEYZ2x0gUlfXyFCmFeSmUW8XFUQ1RBhYb0qMwbqNYJJOqTxesHa7wiHDz/tCIP3hrtU6Tr1RV9hPSlUzYpoZuKgRAYBM0/rlbnGnf6BRol2FgOZmHfGBDMODZrYbS+4P/NGrVb5T2mxgBJgIUbC8aCeZY65ntseSMEw6zxnVEvsXDyFQvu8TUx5lliX+YpLzjG6iSlTv1DZLUR1HzjY92JAznPiGI+6xPThoyc4zXxha4VJ+66lzdmdq5BszoE6/MsqrdyiU3MwCp+ivreGdGVMbHkgw+zUXggUqRuzAdiaj4F4SMt6Z6UUJIOX41rARnHv/3anEVGWaolM0UApaVgO2fa03JLLaxROsSKE1nXB5rfvkJriV0TLSc60hztTHyZEZB9Bw0VYtWB3dzfnWFa3z5s6IHtqP+kSwSgErLYhUU840ebINNH7UakeAUtWNWYAhosJriyZkozYKVpGiiMQ7UXmby1BxyzYVwSJbCNCczVcrVcUSbEBzSgZMZlcc61ozym/gSkYGYbrC75icToR149xtXl0TSfdlhMjiTTMiJ2IR9qYiSa9H0BXv50zTCQGBvhaF1uiclOQUGFRgYK5emM/dhB4+UZumkV8XfrcWe8ZxTtEupRCHp/GBiOxzROI3ZapP8x6lifYYuatQSBnD9M+JcU58OGXByMz5bu0czf/3igESnG5d0aQTYO/tC/AP7G4CbmEscxynregK46ZBK+J580JXA8pCdDGZFeTA+7GzU2NJXY4SnbtPG26Pwv1aV4/g==
+sidebar_class_name: "post api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add tag to task"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/lists/{listId}/tasks/{taskId}/tag"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Add tag to task
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"listId","in":"path","required":true,"schema":{"type":"string"}},{"name":"taskId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"tagId":{"type":"string"}},"required":["tagId"],"title":"TaskTagRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Tag added"},"400":{"description":"Invalid request payload or parameters"},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

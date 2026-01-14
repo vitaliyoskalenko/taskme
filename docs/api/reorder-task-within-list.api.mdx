@@ -1,0 +1,71 @@
+---
+id: reorder-task-within-list
+title: "Reorder task within list"
+description: "Reorder task within list"
+sidebar_label: "Reorder task within list"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9lV9r2zAQwL+K0NMGSeyElm5+60YHGZSVNGOwkoezpcRqbcmTlC4h+LvvTnITJ+n6MtiLbUl3p/vzu/OOe1g5nj3wdMLm4J4cXwy4k8XaKr/F/R3PJVhpr9e+xOWixeMGLNTSS+uCgMYFz3ilnJ8KPuBK46oBlB9wK3+tlZWCZ96uJVouSlkDz3bcbxvSct4qveJtO9gb8ujGPxhaRGHp/CcjtiRxqlsY7aX2dARNU6kCvDI6eXRG096ZaZM/ysKjE401jbReSUenS2vqqRZy0xNVaHklLW8H3Js3Ditw/tYItVTk1mkQA740tgb0kAvwcugVJgZT1IvkoXf94a4Tw5gKr3xFlmfSWCHtLGYGjZG5zbAxTlHwPLtKybxrjHYxvEma0ktIV1jVRCFOiDAbbeEFaOPiNbGpfoZKCdYVgjWwrQwIZizrwRO0x3/XRulaOYcZYYD4Ycm6UjFvnqQOGTnW7KJkhBD7rXypNCMuMTFygzV3KBahfZKIRj8BA46XriUlghBCF0sjiD8T1AOGGU/Imkt2EfY2oYtwGZFtky4znFrIPr80yNpWqFp637gsCSq1HCFLCTSKn4ZwZ41YFyHKaIO3vY68JzZjffp9uQeILuFdd9A6CuFO/PjygtXXH/Ozm3EvJpaZ3IPSUjBi7DT3UovGIMoh/dQzs0O33Wygboi3o+5Ie82QnrKPnE0uhunVcPJxPr7MLsfZ5MMovRr/JDyUXpoQXUdxwO8WNKwwPO3Z9d30LIzZzf2cDtiS+CFZAigQEYo3CN/40sbL+EJXYnC4BC3YqjI5VJh/sEXJkCFghakqyI1FsWcZrdUHP3pjZEQkYeWjM+NROkopEsIIFSiYbsy9wepRQPvaekQ4aSqsDBkMUO06Lh/C9HWomu3HcIiSdvbz9IVO5KkkqlFtt8vBye+2alvaxkJamvoL6garIKesI8FCOfrGci2hcvLMw/1E5e9m3Yh6z8iH1zzvNkFvD03H8TO2ZOc//Q/+461djtoFSpYSKEuHKfE53jOck4mD8tm/42hu3H27pxbLu39QbQTpWPhNhcBnuNyEWEI7h70dNoderRErPI82qcvguMlPmjp4+mp4WN0gMaeuxgrvo43jc4HG/wCEVb1D
+sidebar_class_name: "post api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Reorder task within list"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/lists/{listId}/tasks/{taskId}/reorder"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Reorder task within list
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"listId","in":"path","required":true,"schema":{"type":"string"}},{"name":"taskId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"fromIndex":{"type":"integer"},"toIndex":{"type":"integer"},"lastModified":{"type":"string","format":"date-time"}},"required":["fromIndex","toIndex","lastModified"],"title":"ReorderRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Task reordered"},"400":{"description":"Invalid request payload or parameters"},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

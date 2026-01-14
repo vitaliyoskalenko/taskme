@@ -1,0 +1,71 @@
+---
+id: delete-list
+title: "Delete list"
+description: "Deletes a non-default task list."
+sidebar_label: "Delete list"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNU8tu2zAQ/BViTy2g2EraXnQLGhdIkQJB4qKHwIe1tLaJUCRDUkECQf/eXVHOw26LnkRS+5idme0h4TZCdQflJ3WlY4qwKqChWAftk3YWKrggQ4miQmWdPWlog51JKmG8V4YzZlBApLoLOj1zoR7WhIHCeZd2fF0NXM9jwJZrhDgGWL5wXd1wppYOHjm2gEAPnQ7UQJVCR1y13lGLUPWQnr1kxBS03cIgNZ9OvIs6Q/xSSnL0zkaKEn9Wnsnn/RzLPWLVjBM1MBTwuSyPI7+itW4fpvYTS2pOOT1OubSPaHSjXFCtjpFhKmQGyCZdo8So5O7JMvYC6CmRjfyW6bgn5u3tPAVwrY5kLpmUmds5JgUyHigyXxXMBVGc97oZRg3C457hLhj+v0vJx2o+F6lamvng5ug1HOp7HVzT1SPGXAOk617SWxEhs/pW2BdNpAlMWsk9B/FLPnxzocXE799/LY8681umRbl1Qm2pUZvg2kPmyDbeaZtG8rTduLG9Tob2qv5Ai1vub5M6v7486nOzuF3KD7UReSRW9HlxcCzGM39YdcofvZm68xVto7bGrdEwQRjqndKWt6F2xuDaBQ57pFytfcWB3puphGyISJPBnM7KWSk+Yr0TJ8gw00bkTctGO5ihh9pZtk36v4WcxElstbk3TK00HF3RT+65g3F0jq14EVnwHcOR575fY6SfwQyDPD90FGSvV+LKoHEtrLPFGh3lzL7coIn0D7gfbqa9/qj+hmx6RPv8an7gY14NxjeshjeLcLG4WiwX/B/fe/HAeyPOP5bmGceIpZhvGF46TTu6GobhNx6Zvt4=
+sidebar_class_name: "delete api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete list"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/lists/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes a non-default task list.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"202":{"description":"Task list deleted"},"400":{"description":"Cannot delete default list"},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

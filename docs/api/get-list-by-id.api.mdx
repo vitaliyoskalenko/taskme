@@ -1,0 +1,71 @@
+---
+id: get-list-by-id
+title: "Get list by ID"
+description: "Get list by ID"
+sidebar_label: "Get list by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVe9v2jAQ/Vcsf9okCnTtJ74xYBVTf6CQapoqNDnJQdwmdmo73SqU/313ToBAmNYvxLGf746791623ImN5aMnPrxit9I6y1c9biEujXTvuL/lEQgDZly6FF9XFR4XwogcHBjrAQpf+IjLhPe4VLgqBGJ73MBrKQ0kfORMCRg1TiEXfLTl7r2gG9YZqTa8oph/LgptpZMaA1wN6bIttLJgCf9lOKRHAjY2sqhBPEyBOWFfWIZlY7pYKwfKEVAURSZjQcDBsyX0tptdR88Q08XC6AKMk3Uu/BvdCntc/1Zg5ufPnHQZnD2JdaZN96THVZllIqJb1BtEyrgu87/AoyZ8JLCdwlqUmWuhI60zEIpTtOZsLTJbw5ep8EP7CNpq40KP6lYCqsyJWA/BdH4/vsWd2/HXGT0XwfwhmIc/cTkdh7Nfk2CGjym+Pi4mD3fz+xtcLsNxEODmqpW2FavpOV/uKmiqmSLj4n81Z1fSeDmZ3U/rPNPZ/uUoVRvTTnZIQMMQDiYG8PcMM3p8rU0uKBjhLpxEnZyZUCasu9OJXMsPR6mqtryeau3tKLqr9yTy6vA/QpQNiR3jUKTr4WVXXnP1JjKZMG1YLq3FUphAD0CFNcpiTr+A78L18Lp7PwCrSxMDU9qxtS5V4qs+Bt2A8/Jl0TubEwHgD2rY4mFtLS+AHtT2hh7HqkogjyDXQBdKNXaAb8ArmYxnxAcU0g62Mqk4mZl521lVaTI8T50r7GgwIPfIoY/6H4hC8tPiFkYnpR81q2PwquWNS/KT2jLaDrkfHyXhjel5FXkQ7tSLb7uhfv8RdjLjXt1dpiMnpIKErY3OTwcAKim0VM43Vqq19ulbM2Z3QokN5leOjRfzTp5gtgzpAOeDUyYsjXlvqrbn1/jAGUL9QC7V2fFVqIRtMh2JDBskTJwyqZhgaHpIcG0Q9tZYdH6oo+XNfRonjqYu5rI/7A+JTjhshxfozzSflg5NzpugQ/YMigwbRmH8rLcNJ564/0N4dSS9FFJMQtvbbSQsPJqsqmj7tQRDn70VEc3IWqdInERaWieN9XUq2H98+Keg0eVnRko8V1mzKdT7gc8clzXbsb5qhagURIKEOchgHMdQuNaVzmfuSBI3MyKWOGblCQt99LPlYF88IiQaVtW+ukb0KzSOv+9Yx1A=
+sidebar_class_name: "get api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get list by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/lists/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get list by ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The task list","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"ownerId":{"type":"string"},"title":{"type":"string"},"color":{"type":"string","nullable":true},"icon":{"type":"string","nullable":true},"description":{"type":"string","nullable":true},"isDefault":{"type":"boolean","default":false},"isShared":{"type":"boolean","default":false},"sortType":{"type":"string","enum":["ORDINAL","LABEL","PRIORITY","DATE_CREATED","UPCOMING","STARRED"],"default":"ORDINAL","title":"SortType"},"sortDirection":{"type":"string","enum":["ASCENDING","DESCENDING"],"default":"ASCENDING","title":"SortDirection"},"dateCreated":{"type":"string","format":"date-time","nullable":true},"lastModified":{"type":"string","format":"date-time"}},"required":["id","ownerId","title","lastModified"],"title":"TaskList"}}}},"401":{"description":"Invalid or missing authentication token"},"404":{"description":"Resource not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

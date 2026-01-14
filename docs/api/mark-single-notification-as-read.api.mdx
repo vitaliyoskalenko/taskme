@@ -1,0 +1,71 @@
+---
+id: mark-single-notification-as-read
+title: "Mark single notification as read"
+description: "Mark single notification as read"
+sidebar_label: "Mark single notification as read"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVMFu2zAM/RWBpw3w4rToMMC3HjagAzoUaYodihwYm0mEyJIqyUULw/8+0nYaJ+lhJ8syyUe+9+gWEm4jFM8w/67+uKQ3usSknY2wyiBS2QSd3vl7C2vCQOG2STt+XXX82WPAmhKF2AdYfoEC7KTKXQUZaMu3Hjkvg0AvjQ5UQZFCQ4xQ7qhGKFpI716yYwrabqGT+m/fvIta6kDxYy7J0XNnFCX+en4tj4piGbQfgmA6gaox7KlSGFUgrKDL4GZ+dZlzZ1/R6Eq5oGodI6Mr5CHJpkOh5PZkh/yby/wFRdeEkhQPrjausQzFsadB99yLktqmjzs2eeguA3pLZGNPvbC5J6Z9SkEG3GdDQoWQw8TvXCXMNgmygd8C8mnxmLenYnS5cHIbFwNipPB6EK8JhtN3KflY5HnCuK9p5oPL0Ws4n+YhuKop+/6HGtBN3PIomg4iTT3zIbGAwCi9vA9BfDMcfrlQY+L733+XF8h8N8ih3DqhtqzvJrj6XDGylXfapl4JbTeuh9fJCN6Sh1P3aHHL+Dap24e7C5zFz8elfGBB2RYSK74QWpTRMcWsP/ODCabhcaQ9U2grtTVujYYJwlDulGapVemMwbULHPZKQ7X62Ad6b8YSM1GbpRmauZrNZ3PxH3shcYIMMy7bf/jqZLAPERLbLfeGKZTCvfrtaKLnkxWOXKK42OmJj1j5HfcleW27xkhPwXSdXL80FOTfsRLrBo1roZ+9VukoZzbvBk2kixZLZ3kVxAJfFuP/4qti0E9bHy/Rvh83BPg47M9Z492qm2zOw5MYDE/deebGvuFPMXjYPmIpduSBD5Dj32LVdd0/fCPcdw==
+sidebar_class_name: "put api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Mark single notification as read"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/notifications/{notificationId}/markAsRead"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Mark single notification as read
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"notificationId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"202":{"description":"Notification marked as read"},"401":{"description":"Invalid or missing authentication token"},"404":{"description":"Resource not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

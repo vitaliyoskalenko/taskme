@@ -1,0 +1,63 @@
+---
+id: get-overdue-tasks
+title: "Get overdue tasks"
+description: "Returns tasks past their due date for the authenticated user."
+sidebar_label: "Get overdue tasks"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVttu4zYQ/RWCTy2gxPa2fcmbu/YmbjcX+NJgERgFLY1sbiRSy0saw/C/d4a0YllWiwB5kShyOHN05nCGO+7E2vKrJ94fsLmwz5ZdsL8k/GP5MuEZ2NTIykmt+BWfgvNGWeaCWSWsY24D0rDMA8uEA5ZrQ1NMeHwqJ1OczJi3YC55wi2k3ki3xWg7vgJhwAzRED+Xewz2elFpK2Os3/oJN2ArrSwguh3/1O/T6xTQV4kQdB4BYYBUK4dhyVBUVUHh0bD33ZL1jtt0A6WgkdtWgPuFMWKL+6SD0jbm9eo7pI63/38YAjGpmIijAuOjVWV0BcbJiFRmDU/WGanWaKN8UYhVgXPOeEg4vIqyok9Onv4efPpFrFK+Tzj5nHS4wKUKGVOdi23/5EesoOiyPEb+3W/Z2ugUDEHHPdJ+1rSGSWvsXGldgFCBjlz4AvnNRWEhbJg5JPG95hk4IQv7LvyVkTqKpeMXlC9Jsnf3d2P8/Hr/iM/b8WiyuMXBzeT6Jor3EL62c9KF/36oXRMkDyMUaVcUFHMpaDtJ+8LJErpwGiilysB81EsFwo2O/LT10lZmS3Ooe/MiuvN9IGs0/IZfj+Pxn0TW/d38Bt/fxsMpcVVTMw04JrU7RJYb+OFBpc1EULg1mGaKB8Sl2Nr7/BHg+R1n7AwfQooQ54vxrAY7uqvH85vF9DD8Mp3EwWw4X0wPw0XYvdx3kAsq+1h2dIqFC89eCraThdaGfZvPOq+4YP0qVqv/ZIin0qS+EOYnKsc/B5EiuM8GxOm5/L+fCAXAuludyVy+f1dQ4g8vw4l+qmtRXUxOgbQiNEREuNHXntz92h+c1+2JQnHJjGG3KKW1iKfZMdCGOf0MKuCBVyzpFudsaBvPgEJstoqEoy8P1DKoiZTgNhrB8zWEYyKov/Be4LynX8DggQ+tyOA4uvQGzw3fOFfZq16wLOESz1dPVPKsBzwYnfk0YIw+OEWtO9uMOkwUSbO/vZFPQSh6MKNaGYxwJg6+1Cn543F+FhnnIi1Mo4SkwsaaG122mUOxVxqlGciTKtchfCMz7FYoscb4yrHhw+QsznQ8m9NCaOYl2VJ+3vqdTWK7TZjSDuILFRCj46dQGVsXeiUKJEiYdBP7ZarpiGiDZi8QvZVHHI1uTRcFSk0EM7jsX/ZD79PW4YZQGkXg7hqw98eEvl0ATv5kd7wPfPjqcsifQzX2qgLZJ0xBOLuDxp54DaJWGepig6hpabdbCQsLU+z3NI0F1dAtaEniNTKWjieqXRsQ2EsaSh+mKVTuqPLzi82J6q/HJBxxqrqWyoL3uvaobcM3wgwWc5IZQk0OIA6ncYkn+l8Hm3aS
+sidebar_class_name: "get api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get overdue tasks"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/tasks/overdue"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns tasks past their due date for the authenticated user.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of tasks","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","description":"A task in a task list","properties":{"id":{"type":"string","nullable":true,"example":"task_123abc"},"listId":{"type":"string"},"parentId":{"type":"string","nullable":true},"label":{"type":"string","example":"Buy groceries"},"isCompleted":{"type":"boolean","default":false},"isStarred":{"type":"boolean","default":false},"details":{"type":"string","nullable":true},"priority":{"type":"string","enum":["NONE","LOW","MEDIUM","HIGH"],"default":"NONE","title":"Priority"},"dueDate":{"type":"string","format":"date-time","nullable":true},"reminderDate":{"type":"string","format":"date-time","nullable":true},"repeatDetails":{"nullable":true,"type":"object","properties":{"interval":{"type":"string","enum":["DAY","WEEK","MONTH","YEAR"],"title":"RepeatInterval"},"frequency":{"type":"integer","default":1},"daysOfWeek":{"type":"array","items":{"type":"string","enum":["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY"]},"nullable":true},"endDate":{"type":"string","format":"date-time","nullable":true},"occurrences":{"type":"integer","nullable":true}},"title":"RepeatDetails"},"subtasks":{"type":"array","items":"circular(Task)"},"dateCreated":{"type":"string","format":"date-time"},"lastModified":{"type":"string","format":"date-time"}},"required":["listId","label","dateCreated","lastModified"],"title":"Task"}}}}},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      

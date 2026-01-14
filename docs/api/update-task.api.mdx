@@ -1,0 +1,71 @@
+---
+id: update-task
+title: "Update task"
+description: "Update task"
+sidebar_label: "Update task"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9V1lv4zYQ/isCn3YBJz6axbZ+8ybexm1zwAeCbWAUtDS2uZFJlaSyaxj6750hJeuwEgQI0BeLx1wcznwffWCWbwwbPrLeIJhz82TYssMMhKkWdo/rB7YCrkGPUrvF6TLD7YRrvgML2jgBiRM2ZLEwdhKxDhMSZwlH+Q7T8G8qNERsaHUKaDncwo6z4YHZfUJaxmohNyzLOkdDFsN4h6GlFwZjv6hoTxJN3VBJC9LSFk+SWITcCiW7342StHZiWq2+Q2gxiAhMqEVC0rg8CijSQMiA+xFlAKUSrRLQVoAhGyI6DbLDZBrHfBVDERL85LskLk7/T3/wC1+FLOsUWT09p7sGPEXbZtM+2eEriNskS89f0n2w0SoETaGjjjCXivYsVH2slIqBS5eONU9jzOOaxwacwsxyrd8qHoHlIjZvij/RQvmSbDmCTHdUwrd3t2Oc/nX3gL8346vJ4gYH15Pfr6moj+4LOSusO/d9YZpCSuGKW2jzslZ6x0k9QoEzK7BWW+LUsBMyAv1eKwlwe1Xmp1kvzcps1BzWt37m7fedJ+tq9A1nD+Pxn5Ssu9v5NX6/jUdTylWRmqmLY1KYw8jWrrdkWL0IcrcBXb3iPuWS783d+gHgqSKL5cH31NsWdq03X8SHIfkQ54vxrAj26rYYz68X03z4dTrxg9lovpjmw4XTXmYtyQUZve92VIjwiL0XgmnNQkMha+azuFfcMOnKOtR9MUMsFDpMY64/EDx/dEWKwV1qNAStvd9yCAcAxt6oSKzF27WyKu4+lgjvwaQeSMNDpYgobrRF1n6eJcoIj58XPbJuEiWNz+Og16NPHWRJOUiTyPlACxdtQhOJ1SmiIMf9IOH7WPEoUDqocJXT7r+sjdI7YQymI+DIdoitOTMEVj2B9PoXp/pTMCrVIQRS2WCtUhm5zNWFFu4Ijicc6CIBGdzxDPoE2E7V5HQYhpQCJYn4DA+wVRGRYeqanShxyLp0H6Z78NeSdV0hdQ+ePjNGNK6fC5JONaIB21qbmGHXie7gHFGjyxNxwmz3WkVp6I7ubbCs8iqYET/6K6u+DY4lRU5YztCOAZwQrvjB16LQ/niYn3jGNZ/tQGFjCAlRsNZq17wQbOFEYcO5RBNvT0vGHxeE5rm3Rqgln5aFX9JouZazZYMSG4zoaKxGevnKkdcqTo70VbDPkWmw7gcXZ73PZ4Pf5v1Pw0/94eDX897n/t+sySavSzYYo+SAHOoryN2vg/MRbJcVcHzNWQ0AezUYeyTwWzYw6jVbdVx6WZKeF3KtXJ1VgCW44ZJvsNCkDUb3k5OCmo5nc9rAxsT2Jlnq7+NzzXTcGD/YvOA/GIovM5xyGQWbWK14jJ3Adbj1z71QEcIrjWLPvqm9bR9H5VF5Tq2MPeiD6Z/3znvu6aaMRQXH7P7RW8eH2hmOjWURNrpJjG1BNlxHH3Iw8OBMJTo8orS/EVzJH9R4K1v0S8KHw4obWOg4y2gZ60LTY39JuKOF5y4EjUgYGlcruxbX8SHNPkxznvgYsE57vAW9yX0JbwyHHvzyqOlvwP/oNc9MRu+ELXDstAoeX3o/Z3MyUSqf/GWoIfT9gkBtlf/z2KmIVDT/QS2Kv863ckdxXerWDtgEcpNi+eC+N0m4xuuw2oBRF2jr6fByncSccDTLysN6Flui8f8A1bSoaw==
+sidebar_class_name: "put api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update task"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/lists/{listId}/tasks/{taskId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update task
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"listId","in":"path","required":true,"schema":{"type":"string"}},{"name":"taskId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","description":"A task in a task list","properties":{"id":{"type":"string","nullable":true,"example":"task_123abc"},"listId":{"type":"string"},"parentId":{"type":"string","nullable":true},"label":{"type":"string","example":"Buy groceries"},"isCompleted":{"type":"boolean","default":false},"isStarred":{"type":"boolean","default":false},"details":{"type":"string","nullable":true},"priority":{"type":"string","enum":["NONE","LOW","MEDIUM","HIGH"],"default":"NONE","title":"Priority"},"dueDate":{"type":"string","format":"date-time","nullable":true},"reminderDate":{"type":"string","format":"date-time","nullable":true},"repeatDetails":{"nullable":true,"type":"object","properties":{"interval":{"type":"string","enum":["DAY","WEEK","MONTH","YEAR"],"title":"RepeatInterval"},"frequency":{"type":"integer","default":1},"daysOfWeek":{"type":"array","items":{"type":"string","enum":["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY"]},"nullable":true},"endDate":{"type":"string","format":"date-time","nullable":true},"occurrences":{"type":"integer","nullable":true}},"title":"RepeatDetails"},"subtasks":{"type":"array","items":"circular(Task)"},"dateCreated":{"type":"string","format":"date-time"},"lastModified":{"type":"string","format":"date-time"}},"required":["listId","label","dateCreated","lastModified"],"title":"Task"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Task updated"},"400":{"description":"Invalid request payload or parameters"},"401":{"description":"Invalid or missing authentication token"},"404":{"description":"Resource not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

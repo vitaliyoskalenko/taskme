@@ -1,0 +1,71 @@
+---
+id: create-a-new-task-list
+title: "Create a new task list"
+description: "Create a new task list"
+sidebar_label: "Create a new task list"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVkuP2zYQ/isCz/KzCdL65thO4GIfhqygaBdGQUu0zSxFqiS1u4bh/54ZUrIkr3ezBXLIIReJHA7nQX7fDA/E0q0hozvS/y244sYasgqJYUmhud2D/EDWjGqmx4XdwXR1hGXN/iuYsR9VChoHN+WapWRkdcFCkihpmbS4RPNc8IRarmTvq1ESZSbZsYziyO5zRkZErb+yxJKQ5FrlTFvOjFtlWS6oZfO0oWus5nJLjuAFlrZK7y8th0QWQtC1YD4mULfc4uySISWUfpMNnvgMvquYMpNonmPab9I3StvYKT1XZrLI8H5uo+n8ZnwFkqvxxxn+F9H8NprHf8NwOo5n/06iGfymMP2ymNxez28+w3AZj6MIhCuMakMLAffSsFUeC1lWEZTRTOFCk5fir0IaLyezm6n3M52dJi1XTZ2ms9oBnhfc5UQz+F68zI3SGUVjqNexPHNhCmrstUr5hr991zFsoPWuCbEqunYwZ15WdQ4xNffIl8hzAUyj8adOrgz35zbsozOTK2k8oIf9Pv5a4CClp8CCvUCAQfLDCMQvE0c9SqZfINVPzRJuphWsTtprpQSjkjQgt6HCePXljuoWNl7R/kXB/0vBCzf0AyjJkXQVRGtSfo+GJf/eXaLYXD5QwdOgbFtBTvdC0TRQGoaaZswybYjbPXh5N2hn3BhIJKDQC4GfJS8Dq+6ZdIlconZAA8keW/xmT0BvA0rGNdh7Bm20WTpCAi4LhiUE2y0EuFNwOAQUHMsptmLSE65dY7fWD5gB2iq0gKWdtbkZ9XroNGNdKAs9mnNyHuBCq7RwCAi8DXJsNP8llhlfSZpPgNOtohP07tSQXE4JJH7wqbrrP/+Kn3kGmT+2QK0t5RIK4Ear7PxkmUxzxaV1h4vlL6pfHrMnCsWbnb8UarA1Hwi1tAJOreYLWy3w9auetyM/ieuC0eDyGW9b1GsxDJrB8F2n/6Ez/CMevB+9H4yGv3f7Hwb/nGP9FU2scXKj3Ak06BBcU0m3cCfSBuPF/FkG0WwZ40KwQUijLmL6hE8TujH8pLLM/yAUfyMwpTINtkKtqQDQUJ3sAi4B43CMUAuUBrUH5q1ldRyNNtZFeANcfTCDbr/bx0wQ27ABk5HU4elF+lzuGxZY1QMYcFfOHA8OJVXuiKhetjukEAgOhzU17IsWxyOKAVUaX7srpJ7mvqjBYxc2MJoCqmueTnxz7ri7PzH1eaM+htWOcZKw3L6q22T54naJhFmXr+tMpbhH00cQ4ndEsEK69B05newAqJHbAs4b1r1N5AxtU/aMoi6rconKfSNCOB6nESNH4YjCMpWy1K3A+DfeTRun
+sidebar_class_name: "post api-method"
+info_path: docs/api/task-management-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a new task list"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/lists"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create a new task list
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"templateId":{"type":"string"},"categoryId":{"type":"string","nullable":true},"title":{"type":"string"},"color":{"type":"string","nullable":true},"icon":{"type":"string","nullable":true},"description":{"type":"string","nullable":true},"sortType":{"type":"string","enum":["ORDINAL","LABEL","PRIORITY","DATE_CREATED","UPCOMING","STARRED"],"default":"ORDINAL","title":"SortType"},"sortDirection":{"type":"string","enum":["ASCENDING","DESCENDING"],"default":"ASCENDING","title":"SortDirection"},"dateCreated":{"type":"string","format":"date-time"},"lastModified":{"type":"string","format":"date-time"}},"required":["templateId","title","dateCreated","lastModified"],"title":"TaskListRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Created task list","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"ownerId":{"type":"string"},"title":{"type":"string"},"color":{"type":"string","nullable":true},"icon":{"type":"string","nullable":true},"description":{"type":"string","nullable":true},"isDefault":{"type":"boolean","default":false},"isShared":{"type":"boolean","default":false},"sortType":{"type":"string","enum":["ORDINAL","LABEL","PRIORITY","DATE_CREATED","UPCOMING","STARRED"],"default":"ORDINAL","title":"SortType"},"sortDirection":{"type":"string","enum":["ASCENDING","DESCENDING"],"default":"ASCENDING","title":"SortDirection"},"dateCreated":{"type":"string","format":"date-time","nullable":true},"lastModified":{"type":"string","format":"date-time"}},"required":["id","ownerId","title","lastModified"],"title":"TaskList"}}}},"400":{"description":"Invalid request payload or parameters"},"401":{"description":"Invalid or missing authentication token"}}}
+>
+  
+</StatusCodes>
+
+
+      
